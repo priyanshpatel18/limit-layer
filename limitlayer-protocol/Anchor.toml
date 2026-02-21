@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-limitlayer_protocol = "LiLyRHkivstck1s3E58W6pcUobaEz2iAtcNZFXuAQu7"
+limitlayer_protocol = "LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6"
 
 [registry]
 url = "https://api.apr.dev"

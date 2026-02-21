@@ -18,10 +18,10 @@ The protocol uses Program Derived Addresses (PDAs) throughout and integrates wit
 ## Program ID
 
 ```
-LiLyRHkivstck1s3E58W6pcUobaEz2iAtcNZFXuAQu7
+LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6
 ```
 
-- [Solana Explorer (Devnet)](https://explorer.solana.com/address/LiLyRHkivstck1s3E58W6pcUobaEz2iAtcNZFXuAQu7?cluster=devnet)
+- [Solana Explorer (Devnet)](https://explorer.solana.com/address/LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6?cluster=devnet)
 
 ## Architecture
 

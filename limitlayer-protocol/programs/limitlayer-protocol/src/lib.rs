@@ -14,7 +14,7 @@ pub use enums::*;
 pub use instructions::*;
 pub use state::*;
 
-declare_id!("LiLyRHkivstck1s3E58W6pcUobaEz2iAtcNZFXuAQu7");
+declare_id!("LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6");
 
 #[ephemeral]
 #[program]
