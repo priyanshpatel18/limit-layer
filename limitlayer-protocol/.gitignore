@@ -1,6 +1,5 @@
 .anchor
 .DS_Store
-test-transactions.json
 target
 **/*.rs.bk
 node_modules
