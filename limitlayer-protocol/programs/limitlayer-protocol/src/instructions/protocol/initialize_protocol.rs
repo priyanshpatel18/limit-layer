@@ -1,6 +1,7 @@
 use anchor_lang::prelude::*;
 
 use crate::{
+    events::ProtocolInitialized,
     constants::*,
     error::ErrorCode,
     state::ProtocolState,
@@ -44,6 +45,13 @@ impl<'info> InitializeProtocol<'info> {
             api_key_count: 0,
             total_usage_checkpoints: 0,
             bump: bumps.protocol,
+        });
+
+        emit!(ProtocolInitialized {
+            protocol: self.protocol.key(),
+            admin: self.admin.key(),
+            treasury,
+            protocol_fee_bps,
         });
 
         Ok(())

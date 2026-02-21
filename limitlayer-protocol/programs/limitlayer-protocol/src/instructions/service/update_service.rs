@@ -2,6 +2,7 @@ use anchor_lang::prelude::*;
 
 use crate::{
     error::ErrorCode,
+    events::ServiceUpdated,
     state::ServiceAccount,
     enums::ServiceStatus,
 };
@@ -34,6 +35,12 @@ impl<'info> UpdateService<'info> {
         if let Some(p) = new_default_policy {
             service.default_policy = p;
         }
+
+        emit!(ServiceUpdated {
+            service: self.service.key(),
+            new_authority,
+            new_default_policy,
+        });
 
         Ok(())
     }

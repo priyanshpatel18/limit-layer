@@ -1,6 +1,7 @@
 use anchor_lang::prelude::*;
 
 use crate::{
+    events::ProtocolUpdated,
     constants::*,
     error::ErrorCode,
     state::ProtocolState,
@@ -42,6 +43,13 @@ impl<'info> UpdateProtocol<'info> {
         if let Some(p) = paused {
             protocol.paused = p;
         }
+
+        emit!(ProtocolUpdated {
+            protocol: self.protocol.key(),
+            new_fee_bps,
+            new_treasury,
+            paused,
+        });
 
         Ok(())
     }

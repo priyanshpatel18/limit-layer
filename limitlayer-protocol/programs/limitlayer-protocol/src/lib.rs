@@ -1,18 +1,22 @@
 use anchor_lang::prelude::*;
+use ephemeral_rollups_sdk::anchor::ephemeral;
 
 pub mod constants;
 pub mod enums;
 pub mod error;
+pub mod events;
 pub mod instructions;
 pub mod state;
 
 pub use constants::*;
+pub use events::*;
 pub use enums::*;
 pub use instructions::*;
 pub use state::*;
 
 declare_id!("LiLyRHkivstck1s3E58W6pcUobaEz2iAtcNZFXuAQu7");
 
+#[ephemeral]
 #[program]
 pub mod limitlayer_protocol {
     use super::*;

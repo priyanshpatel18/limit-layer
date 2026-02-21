@@ -2,6 +2,7 @@ use anchor_lang::prelude::*;
 
 use crate::{
     error::ErrorCode,
+    events::ServiceStatusChanged,
     state::ServiceAccount,
     enums::ServiceStatus,
 };
@@ -36,6 +37,16 @@ impl<'info> SetServiceStatus<'info> {
             }
             _ => return err!(ErrorCode::InvalidServiceStatusTransition),
         }
+
+        let status_u8 = match new_status {
+            ServiceStatus::Active => 0,
+            ServiceStatus::Paused => 1,
+            ServiceStatus::Disabled => 2,
+        };
+        emit!(ServiceStatusChanged {
+            service: self.service.key(),
+            new_status: status_u8,
+        });
 
         Ok(())
     }

@@ -1,11 +1,11 @@
 use anchor_lang::prelude::*;
 
 use crate::{
-    constants::*,
-    error::ErrorCode,
-    state::{ProtocolState, ServiceAccount},
+    constants::{*, MAX_NAME_LEN},
     enums::ServiceStatus,
-    constants::MAX_NAME_LEN,
+    error::ErrorCode,
+    events::ServiceCreated,
+    state::{ProtocolState, ServiceAccount},
 };
 
 #[derive(Accounts)]
@@ -54,12 +54,20 @@ impl<'info> CreateService<'info> {
 
         self.service.set_inner(ServiceAccount {
             authority: self.authority.key(),
-            name,
+            name: name.clone(),
             status: ServiceStatus::Active,
             default_policy,
             total_usage_units: 0,
             created_ts: Clock::get()?.unix_timestamp,
             bump: bumps.service,
+        });
+
+        emit!(ServiceCreated {
+            service: self.service.key(),
+            protocol: self.protocol.key(),
+            authority: self.authority.key(),
+            name,
+            default_policy,
         });
 
         Ok(())
