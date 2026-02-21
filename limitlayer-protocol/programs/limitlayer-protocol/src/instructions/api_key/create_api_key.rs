@@ -5,7 +5,10 @@ use crate::{
     events::ApiKeyCreated,
     enums::ApiKeyStatus,
     error::ErrorCode,
-    state::{ApiKeyAccount, ProtocolState, ReputationAccount, ServiceAccount},
+    state::{
+        ApiKeyAccount, DelegatedUsageAccount, ProtocolState, ReputationAccount,
+        ServiceAccount,
+    },
 };
 
 #[derive(Accounts)]
@@ -37,6 +40,15 @@ pub struct CreateApiKey<'info> {
         bump
     )]
     pub api_key: Account<'info, ApiKeyAccount>,
+
+    #[account(
+        init,
+        payer = authority,
+        space = 8 + DelegatedUsageAccount::INIT_SPACE,
+        seeds = [DELEGATED_USAGE_SEED.as_bytes(), api_key.key().as_ref()],
+        bump
+    )]
+    pub delegated_usage: Account<'info, DelegatedUsageAccount>,
 
     /// CHECK: created if needed (shared identity)
     #[account(
@@ -84,6 +96,21 @@ impl<'info> CreateApiKey<'info> {
                 bump: bumps.reputation,
             });
         }
+
+        let now = Clock::get()?.unix_timestamp;
+        self.delegated_usage.set_inner(DelegatedUsageAccount {
+            api_key: self.api_key.key(),
+            policy,
+            execution_region: Pubkey::default(),
+            delegated: false,
+            delegation_seq: 0,
+            window_start_ts: now,
+            current_window_usage: 0,
+            burst_counter: 0,
+            last_update_ts: now,
+            delegated_at: 0,
+            bump: bumps.delegated_usage,
+        });
 
         emit!(ApiKeyCreated {
             api_key: self.api_key.key(),

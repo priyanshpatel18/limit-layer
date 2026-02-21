@@ -53,6 +53,8 @@ pub enum ErrorCode {
     AlreadyDelegated,
     #[msg("Not delegated")]
     NotDelegated,
+    #[msg("Invalid delegation state; call prepare_delegation first")]
+    InvalidDelegationState,
     #[msg("Invalid execution region")]
     InvalidExecutionRegion,
     #[msg("Delegation requires final checkpoint")]

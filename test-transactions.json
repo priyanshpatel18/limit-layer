@@ -1,0 +1,802 @@
+[
+  {
+    "iteration": "01_protocol initializes protocol with valid params",
+    "signature": "3afSTrDrwdRby3YhBLYE7CeJipS9aKb8YprjanBVWzjzXR1s3y53s7Akh4Lav6EhQ3nkYDSJRnFVmzA3JtUEZhVc"
+  },
+  {
+    "iteration": "01_protocol updates protocol fee",
+    "signature": "3WmCwp5bnUyRiPcncczBcdVPN4tULEKVQKZQSUFAaGdHzQQEUxwtXUgZmSUsoGnCdFj6ueSrCfXWE1rpSrZDvXgt"
+  },
+  {
+    "iteration": "01_protocol updates protocol treasury",
+    "signature": "5aXrHCssEY49A2av1GxtBvwk2wCVcqFky6KpUShxmBGV5uXDD4YLStC8xKXpB4HDnvoPgWEAL13TAdWAXovsgdEg"
+  },
+  {
+    "iteration": "01_protocol updates protocol paused state",
+    "signature": "5BiDgDRFEW9xy1aHbq6yWnJpQxe32NZM82XSikMyV4cPRB7J74KTUVUSepXRuG5vRmzAjWcEyTppQL6mKu5SGg62"
+  },
+  {
+    "iteration": "01_protocol updates protocol paused state",
+    "signature": "5rzRyqgxFa5GSPnm5koH22cNEvmpvkC78WwhskfN9YqzpVFy3cfbgrCvphdcan1XgPqwa8QEDvcb7JwZfoiXtDVG"
+  },
+  {
+    "iteration": "02_service creates a service with valid name and default policy",
+    "signature": "3Tabo47fovNL3baFP2DXeecidMPWsqrPNUEyS7gZh139sYbHnih8vnFGGVoWBaQGJvBzeCsyaxW39n8hkeW6bQi4"
+  },
+  {
+    "iteration": "02_service creates a second service (service_count increments)",
+    "signature": "3eogUDbers4uFYWpxmVdSe1iXKGJyXJ5UufgFjzo1j24CR1uUTi43KUE2y9cxcB8B9HW9Dm4PAYE6AjkwrkkmVLR"
+  },
+  {
+    "iteration": "02_service rejects create_service when protocol is paused",
+    "signature": "5UNm7345oRSKgQrpodsJe7FLjWAbFygoB2ao7cn7REhTx3wpXHsyPdxZv2AXNZBvBZBdXGy3FHMSwQ4zKS333NEq"
+  },
+  {
+    "iteration": "02_service rejects create_service when protocol is paused",
+    "signature": "5xcL5uTnMjF5UJjXpYLMmfBpk35zwm491RcqUisXM1cHtZV9tPmTw69WUXfCkWTFogsRZyWLkKyBKvThkQZSPE9k"
+  },
+  {
+    "iteration": "02_service updates service authority",
+    "signature": "46Zu5SX6hKYGnZCsctVFE6cFw2UHRnaMb8Goms25uUSi9BhKYvvxhfbbSJdBTHNSLozkJwveojJoWPWp72YEoc3C"
+  },
+  {
+    "iteration": "02_service updates service authority",
+    "signature": "3yQt6xpXd7rtPTQvvAusiKv55t761Kmzh3MuNXiuxjsQXtyLDbj1GRp6T6PL5o5bUSacuzCVo9uKMtA1kZRoUXFL"
+  },
+  {
+    "iteration": "02_service updates service default policy",
+    "signature": "377mF34CcYUtBEipcY77pZ4aG8dEgSgkYaCi3G9VYWLgpvW9pkr6vgZZKeLyffCCcBZ9FjMvjzEbVtDUb9m8b5Ao"
+  },
+  {
+    "iteration": "02_service set_service_status: Active -> Paused",
+    "signature": "4oj2gh2VeH4JZn4HGuAeQp7gzbC3ytPw1LvaNoBLg7xAWaZBY6tkCtZW9LFzsEdGtZq2H5HmvTzWUqidzKQ22aWx"
+  },
+  {
+    "iteration": "02_service set_service_status: Paused -> Active",
+    "signature": "4MKToZqQF6odYRz4Bjp8zb57EWsuitkmTnPysZLLNEMDDcm97zRQBkF5XUBMvYzxQJQjwBefvQFUUoezWATHfjvp"
+  },
+  {
+    "iteration": "02_service set_service_status: Active -> Disabled",
+    "signature": "2RC33hR47LydbeBCYV5JZWHbgu2FD3PpkgRMioS55RUneEoX1mpP94VSQJiNnXtx2kfSR5FL2XdHiZiS21B4XrLp"
+  },
+  {
+    "iteration": "02_service allows status transition Paused -> Disabled on second service",
+    "signature": "2FwrcpyfayYHHnzmN3Th4KGBZ3bf3Q7NpUoP2ASr72SBdQUXzAfiE5SCnmRzzg1c3N4EjEwpnJYK3ePJFLjdupmK"
+  },
+  {
+    "iteration": "02_service allows status transition Paused -> Disabled on second service",
+    "signature": "2fdBowxgatsNJYET42k4ifrCaM1X5kA4CEHV6eErwjCSsDLwMTJc5RugUwPdoCCqJ6VH1mcjbpXw1MUP4jjzVY7R"
+  },
+  {
+    "iteration": "03_policy creates a policy with valid params",
+    "signature": "2LfYUAxKFXYPiXqDSGsu4pKY8RXPV8PWzdchgYQ7oSN8PxynGYzuSHy9cKrrSDU3fPadhadCGrkn3Hd5TkLfHLSu"
+  },
+  {
+    "iteration": "03_policy updates policy",
+    "signature": "2HTvZLopR4qYSCRh52rJ3a4GQrHo7QZ3yR2q3cqT5XLKQhjT9EioCtXdRwZoNobj72grcFQ3DvtdQD1yf4gPHBGy"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "pm4ujxz6KBMpmLr5kfoCavs1yD9Zkfg2Z4PXD17YGeg7Ns6CzvcopJsvbyqrtfgYA3cRjMUFZQv9EuSRwdcCB8Y"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "4Mrgbqbi7BJ6XMeH87FQWRQst6f1mW3mh4gJXoCGzKoMRKXMAvPNDh4zWBv4EYAC2FsDGMtGdxkLbwCV7rbdbXff"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "Chkrz1H9xMvNMj8a8Yta8rcfS4nQx9CHwU1RZEhWHPhb1mRui5KSGRQWtTCo9BR674W7MqcwdLek9aAR1mzsi7A"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "36eZWAhC9jg1ZZWntp4XbXpFftjjPL4rKWMRuwtEaRPMrYMszDzaWsomsn7tprxudNvWeD7KjFNja2tBHPjLhLKW"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "3UAxBMjJ13dm26kqbAmWbwSz8cPw89YJ14ojiK139Vewi4q7qjMpqkE5Zi7tv4z3yHProjg4U3JCjsHp8u8Bfo1e"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "3WfYgaLmGREGFQXxzw9XieiT17DQFDCCjhR8qG7Vd3qboK4F25GoBqGoWrJYKViA7hHZdxQFUimSabc4J4a4u5wG"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "38vDaNvHXq16uYevDgFBG14sKSo4HLuUdc1fTsMFwrPk7zUGUKir1639QyGxWzQdtHLa8TUEgFz6Smc2WRjEuUaF"
+  },
+  {
+    "iteration": "06_enforcement manual_unblock_key unblocks an api key",
+    "signature": "27EtWHoZEe3JU2EiKPr59o111aGByobkfimwrm1KhFjq9V5mGqNFhoBEfAFrAputQfd5s8GstiCc2WL97HcUdniv"
+  },
+  {
+    "iteration": "07_abuse emit_abuse_signal creates signal and updates reputation",
+    "signature": "2dVNPpwJBaGQ5sP4gX6bsMQevGHocxeYNBMLSmb29y9PLFZJ9GC98fGdDo2uMdJJAqCVLQpxjW9CinjLpPmhjRPU"
+  },
+  {
+    "iteration": "07_abuse update_reputation applies delta",
+    "signature": "1Ex2oCi7oSErzSHeqtr1CJbWCaZLd2U15HWbA11Ej3uoNjjzKgTkPrYnBZ85SA6W86kyqjWkPW4FtXRoTqF7iuk"
+  },
+  {
+    "iteration": "07_abuse update_reputation clamps to REPUTATION_MAX",
+    "signature": "kycwWmsTPv4osKeSiojgy3jeCyFfxSm419f3ycbx8LPJ64Kx546ohY46bUuNotxwWHUAKvPVZUjmZhLtCRFUXC1"
+  },
+  {
+    "iteration": "02_service creates a service with valid name and default policy",
+    "signature": "Cb15jsPKodZXPffNuqNLgHyzZwMBikAwJTmD3trQUJW9nPmRk8TSeg7EeBjyN18pEjRybQAxbKoijZfobaPsK1r"
+  },
+  {
+    "iteration": "02_service creates a second service (service_count increments)",
+    "signature": "4YGjbWFREn2ALR1kkefdAHL5Ei9MaNzSUUa6uDKZf4MbjCXhVEpnkjrPvvPh4zvpbMW2WjomwSWuo7arCE4385oo"
+  },
+  {
+    "iteration": "02_service rejects create_service when protocol is paused",
+    "signature": "5RrtmECvrv8qbKczemPuCSbagYXDud58HD51RCETzhjqNaDYpc5hkEcdgftC2RLWJUDrxW9EG3DyHoYM1vNBN6h1"
+  },
+  {
+    "iteration": "02_service rejects create_service when protocol is paused",
+    "signature": "3npr5FeZCm8e3Annm6XJKUoxG3ak6Kk5qJcerfYMPQRSdp16mASGzAHwqQWcrZHZUFcCjtNn65k2fAQtLqJrqqjM"
+  },
+  {
+    "iteration": "02_service updates service authority",
+    "signature": "DskM3NWBEjfJa7k8nA6cTfaxLV1it6fEbwHyRDCBFrVS1c6JthS28co219H1ugPuDL5UwJcADwVpgCwt1FCQdG8"
+  },
+  {
+    "iteration": "02_service updates service authority",
+    "signature": "pEk3C5uwuyDCARoHZuu1XTjtauaskRL3xUzzifAyR7zcumB1MyE6P5zHJyE63kMJWVhb5izzfmyEcEY1an7j7yn"
+  },
+  {
+    "iteration": "02_service updates service default policy",
+    "signature": "3hXF9MWmsN7CBWFEoqGQgiR2qwuHZFG4vXCNT9CVHZMNUfttqK5Aa9yYgb81PUsaSqbRVF5wiDK5kfZSBdqWRhg2"
+  },
+  {
+    "iteration": "02_service set_service_status: Active -> Paused",
+    "signature": "2bmazhwzWRXYz4iG7Rxp5pf7JdDrnoNaFhA97swVUSsogjjeCUZDvKzgbq9GoiCErFqYbWa5ZbyPyK3M6Aa1FC57"
+  },
+  {
+    "iteration": "02_service set_service_status: Paused -> Active",
+    "signature": "LKebe6yqnWEc5ktLrSJW84nE8kpzTg93C1VCZThfVTkYzxbtPukTYrLmfvzJkdWp2JV9Sa2aYypCh5GfZxrxA4D"
+  },
+  {
+    "iteration": "02_service set_service_status: Active -> Disabled",
+    "signature": "486aCi6iMcWJ3VRqxN5LkdhTA8hYkwxZgJo7b2c4ZoBxiDFP5csUUVETTTfuvK5kyHrn1hv6P95sK2wRGWfY3d1r"
+  },
+  {
+    "iteration": "02_service allows status transition Paused -> Disabled on second service",
+    "signature": "43jbHzLnqidLtzGnuC19e3oumJisbDYSWfAhkWLizxW5BFEafPWLuYEjM4MadiAecyYwZL6g74vbj2dhLR3LUrJU"
+  },
+  {
+    "iteration": "03_policy updates policy",
+    "signature": "4SkxUjSxyHZgs9xBHWnrKWjheiEyzx2Xs3CZP2EgKKkKrsKriyaMQCWzcCzSsU4TJ6tyL8sz82uPT68BiwbrTR6f"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "4PSeaMARpSjvveZLbtUwKJuTkvd2puJoun1MzCdfuDwq1LJLqLwSv7Yh3C9HLGs841n7idzsSc4G2DB8hZNTdBnC"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "27YWnmq9ofNbKUrTwqrCeJVEmDVuqCWW81FZnQKhpTMVpE9RgtLBYMBVeRV6ehM6Z8cP9heC4jfMqipHSYcNWbFZ"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "43fJgyzvwgFoJ5ycAqQfXRHtGThyq7wLq3CMy4fj28tSjXsejEC94Qg9ZzY7tZomXZgjgJsGLYQVHUhWqEfaGEtw"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "2m2hKgbAr4ZwsSpKgBFTRYzvDyR2rrkmVkoobeU6Y96KpQruJtVRQJqgc79zYL7F9RKdpan19nG4FWhetZ5T4WDk"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "3P3AQwHSadH5H1SaVGDPkzdTs1BquyLQM3wyZ1KU5dWecHurheUNKsStX1grC7JL3iw56DHUcFD4fR8DCkkLuBPu"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "2vngLmgfq38d9B52da52C82TPJhEqzEnoHKHydq9V9NnW3PFVA2Fp1cTWfSrzfzhfpVFPfZBrzPmsy2sDi6bFN2n"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "3YcXQFi4TZzki9NL8JEpxR5e9tAE699mvr1CeCkAqvfKvEYYWR8EAoogztT4oJE3tbZtUeM5qR5PSRKR2PJQadbG"
+  },
+  {
+    "iteration": "06_enforcement manual_unblock_key unblocks an api key",
+    "signature": "4jNSLtjcehHcMhaAokuJrSDah9iVfM5trZbekzeReiq71cmFc5chMvXUFCCiSZ1UcPmWJYnV9MEELQymQkqjzu9X"
+  },
+  {
+    "iteration": "07_abuse update_reputation applies delta",
+    "signature": "5AneJaUL7yWWXsyreKTs47yoWSLXPzCj9yJXBCQPP4SB1H9aeuDrtVY1jgKipanHfUd4eu8Dzhe2CEDxrDARY41a"
+  },
+  {
+    "iteration": "07_abuse update_reputation clamps to REPUTATION_MAX",
+    "signature": "5wV67ZwJjaRBig6a981XEqxVKKmsyUPnhW7gEyFZ1jrsjw8Rbwdf8Dcx6Jo1PTni8miFBiBQUbhTucU5mFvso5RU"
+  },
+  {
+    "iteration": "03_policy updates policy",
+    "signature": "4vV73EqbWckGFg424hwk4BmVBwGF6ze7tGeAJjQy5sqRX3cDP4jspFgExkY2AnzaxsmyWK375byWZm1xZWfMcmqz"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "6shx7wCnhQ7mpefahcvwJCdvTAAnFvbCYrStvxXRKzkDEh5qViKchG84jTa3qQ6uVxngQZeRSiyVj6sbJqK2CJa"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "3GRGLdDwFoTbWMoREU45r5ESFScfzZDiTfFwxd9xdeBsH2K948cpPz6guz5rZHKE2AdVSKrrs29m2JaDSjgnL7EL"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "4BDfQs4DsPxAZ44aEtSq1xdUMtqcmk8vQ6dpPgHbQQYxBWsrsBNBYShEA6hv44VKVxD8gFG4d6kyEpgtCdj1ivGB"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "5yhMKG7uZ4xTAFinCo7WQvrJC3Qd2gGDwCM98Ws6vHF27FrJCoGEyEtyfbMAdXn8bq9tj2PjmdAsnYAoh9dEMqpn"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "3YX1x7PKYEUbdLiK6qr7EXTzAuoB9E639xAqhnfx84mzLSdsLWCFhjxt4g333zUXVHtqT9AR1QfWjN13Exgaqi5i"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "5UJDhZDijEoCQf4TnbwvdSqGAnwQVKiWY4Bh7zT7dRk1ceUcSvNZqW3GsdU2D4wndyR8Ua1p5jQrJ7KodnC32Wem"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "65Hr4y5b7jJ4yur187tkBPRkH5V2SaWbiNHzq5H2Bm2qEXUhHhSfaYftxAcTU8swnMcSqAYXkZfp4G7ZtY3iuEcR"
+  },
+  {
+    "iteration": "06_enforcement manual_unblock_key unblocks an api key",
+    "signature": "5h5coWoQYStV5Zwu4ZoWr7SELLbqQR3gGPUWVr59LL92HykFg365QHmZuMPugmMWx2qqC3LHituiahueURcz5c3X"
+  },
+  {
+    "iteration": "07_abuse update_reputation applies delta",
+    "signature": "hNY7dYiH6aE5WA66hAqJjaiNyCGBmURKpw6tHUgXFkjfMkcmo8jPFMUnj2bQYwdPKDzbMSkcn4gYbdt4W5Kgnw6"
+  },
+  {
+    "iteration": "07_abuse update_reputation clamps to REPUTATION_MAX",
+    "signature": "2DmvUPUE72k7HcKdjVCYCpnJxX3enwtPwYL84RLtvTCgw4vAawZFpLyYrMpZ7w7iNdaubZtQNm2Rt7ttcyJxLwuW"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "wgSW9oesmasBHwD8T6G65v69CtvptYXAfdpULN8FSrV14tcjUpBfmqUPG596zedvCbSxBjYFrcyT8fArPnUBSmi"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "5RdLGLuNUFFrUPtH39y9zNaFruXM1nGWUfRk8gxuzbBg1tpTySdgXH1XVrXWjxWjhhCrNbJhGbuTPD1ys49zRASD"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "4LcnrGDAfZ4Vqg1HNkmEYn8EzhBPMgJaLufKmv5L5gZTkXQsXupztHQt4WaVeiznRwDqqW4Ac1d3ptKbEwsCb6Y8"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "pxqJpx1UiuMKNCkJw1fyxiNFYzJh4VdD26SJKshDyBZu5mVaELj5oVREBVkxJ6uB2RSmZJJhHNBVHZVfchZ5Yrq"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "2Ke9CCwijQEfiwE7nZqVSCBN2QoLs7RKCJ7Vn8VBPha72LWsjGm6PLuk5nU581Qmg14kgyH1ZyMmJDmjvDrYQnqt"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "5QCna3rAAt82RB9qZbXqeyN1NbmZwq6F6fmErfyWNgwDybFEbxRwnUF7afLEBMZ3tHCda1sZrdJ6zZF589CPs2V1"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "6tnKCMJ3bAgihtqnUPstXkPWM3XrDMgeiwbD6ypjFKExDxA8ChMbooHbQHktffYk67xxzF5x3sCcBMUMzGtnPh2"
+  },
+  {
+    "iteration": "06_enforcement manual_unblock_key unblocks an api key",
+    "signature": "3EWLJ1Pc9hLaMMZ3EHDLQBf8ehX87ZnVXUEm9KduhohwgnkKFQsHbVNhuWMb1eXjV4v3tao85fPunAyAbyMjaBiK"
+  },
+  {
+    "iteration": "07_abuse update_reputation applies delta",
+    "signature": "5trqG3xjYfQAybhUmAhkBrhnnge9sQXMfsKVVoWEtvif15mKe9WCtzaQ5k283Wi4Ew3KTSoq86KiKuz8Va6cgZT3"
+  },
+  {
+    "iteration": "07_abuse update_reputation clamps to REPUTATION_MAX",
+    "signature": "t1vioQHcUsXpNdWTfZGkP2HhgVp8jwCqFzed3B4TK9Dgu2MuHXoMjC5kV3xVegbhwFXYKhZNorgriSm36ueBWV2"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "4Lz1Yo9XyB9BwAUGpNBaszR8HQKSuhvsmktCupoWqQ8ZjRmwebXJgyeP4QJasBmSsihPaXUwMFBDQc4zmf4XirR9"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "61KT9fWeXF25vgEHQohdo61zmQfQX9ix4xHvgz9etk3YL2zRbLzXAFuPHrEeMwTtM3iKcQtFg3hjBJyYrFyLTYVU"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2mdLa3PUHKn1J9QBnvRjjsyR65PJiMcVu9p7WYA7pMsTwEfmjJS5MCUaKNJ8uUJohw1YzmWe3o7Xax3YntNQw1Ho"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "5nfJWjo2AHvCLeLCmom76CxSPzfFvNbvjmdCX5moZW2EqsabRtW81gvMHJvVT8XArhZBunixCcCgdd6RBkKGGDJv"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "23y3i6TC2m2iSBzApHcRpeQZ1upoFBCU6ZAV2N9qAkjkNFoBdCbHa8nTaV3xRp4jeDCZE3CA8nSobeLpBvnNiHtf"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "4f2t5SVjiU68He1iUA6g3ih1NyZivHUUzJHGjaA2GMfZQ2hdeQ7xaF2fTAbbWGXoyFGv4rERGGvpgsAqVeQjHvXF"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "Ygz2NzmbeBdgEv7wS9gzw3tRX1Dcft4x4NinSoFVwQu8X6CkigyVJg6dosbHzbdR2TGxjvsEmq7Ppm2R97t35FJ"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "Ux5C4Gvpw1di9GyHvGJbtDQCyVjyFr6Uv1c2byqNKQj593Sp94c3uWWcfLxWj7MQmpcC9nNgUx8nHazb8Py6iRC"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "xciQDknULKCv3eWXR67gMgGSrpkndmrLUKVnmdt8hF7nWHW3w7kd8ZnQQ97XSbFDJUvKnEm5eneGaoye6ZXfR1L"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "4mRovxwpA57jJoo9LVWez53xD9sRucKSWwfmAu56yD8bktuBeHx9sDtqjvxRBEX6zi9QLf1CS5jtzyfSGD21aUTB"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "4AbRwuWPiqwQXyVR9uXqkbZAbs7cNoLwh1PvpHsGJgtQeA4pQNvHSTssPpvUaaTucW7EWYYNsqBHU3x8PM7xNAFX"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "aGCr4J5AKCPju9svARmbCkyHReGjMjtV1NxSiPven71a5UeskfgUGRZZPTNZYU9Q2v4YqKwbTQP8SxrVkJmueRc"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "2cNMSNhRcBCU3sfWRuqVTCdgUfcjfgEpKt6tvzPeFW2yrcZtmpPNPi9CbKouyasoESTXSvrxVtU6Fmq6cN1YL26V"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "4WroCJGazeQuZ56d6Pv4DrdMe9jCgHpDCR6YsNkRD9hi4nepyzDeXbZHM1ZhE7naYmZVBzAiRu9QKeaKHQwYA6a6"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "bEf18LTWmzKfbyBBYH29dyLARMMTYZoAKc1dceqKN9mJEfcUNhRjfuhZ1MZUiatUCSFwUGw62pymz2MngEDv1tP"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "5YVz8SwaJmCJyjgzLc4eiX5ZV6XECG68Dz3RubtuZe7SMNp5GVDXnkDrmZdy3BrB7WwanU3Pew6UX9Zd6N2QhmX3"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2Lfuc7cRZvSqdVE2EC4Vn2HnECiuvZcKXaE9TW4DjJcCACTxYPofvUGXheqAuETJ5y3j1r8bUaACZroogW8x2ouJ"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "49Vc9TBefZavhmP9bQx4EvvGxJZ6WwGw6ELSSu8D62LtCg7jbRwJxwLv9NgN6vCHLXYRRyHNzvyMPHodSmExEu3i"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "2TV3LRJvoSgbMceUCWmtzwMBNofrnUFfoPbC5kHHN2byd7Ue9sqFTsCyPRpKDbV8mjkcS9To8evpyGU1BfwdrVuk"
+  },
+  {
+    "iteration": "06_enforcement before",
+    "signature": "3Px9DEyNiDG7dhr8xzHU3GMkEZJrqWVcdkxpzNBCpQLN5AfWkNKS7AntoNVSxvz9Q37tgDGioouSNi5EGqofVH4Q"
+  },
+  {
+    "iteration": "06_enforcement manual_block_key blocks an api key",
+    "signature": "3fnjFuozqqva7QBApeT2nPbTzVhYqc3jEATaZw6enQp3kX2GXVHJ4DwrHFhtsaQVvzKXtjaea5AaiQNYzSfYLGVd"
+  },
+  {
+    "iteration": "06_enforcement manual_unblock_key unblocks an api key",
+    "signature": "3g1mBo5od2mKQw979K732LE3cpkarr1yY7ZM8Lv7ukLy42X2LeUjWJ3zYwj4Q3MsVPjvc7FwFT5CATHH1rb4QSAo"
+  },
+  {
+    "iteration": "07_abuse update_reputation applies delta",
+    "signature": "27PKNrryBSgx1M7DMLarxA8UJ1tbhPfuf2kNdMSCN8A7PespQ69Rskr42QbJKwUaBm6kwQKfzHRN7eeTBw4VwLSV"
+  },
+  {
+    "iteration": "07_abuse update_reputation clamps to REPUTATION_MAX",
+    "signature": "5Mc8EAsH5P5RYMbeinxHAuEKQ1nDjRTrMVh4uPWmS4P3cjToENBoG2ecvSFZ1pWUkz6e4WRchX16G8RAMTpvB4DW"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2zPfueziPS8U41bsRA5TNSK5NHAVvpffwrQ2KjFsdFbSRP6twLnoHGnHjNQ62ewUh1JwaxvwouR3M29j7NkhrJ2V"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "3qSdXUWz69yd6suKboT1XwtBi2rrXyuLs4qnGBBRsom1F7ersFLGA6cAt7wkbEf6vufj2fk9fv4v4Gz1LLmAFRPq"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2jrmC5RdU2ZgFfjvjqN5KNevUSeXv4sjTt1sz7v4iUYHj4A5vg4bLtbN243qt8JDYCATCQvFk9p2MbKoBMvw52Mx"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "AUjE8xcHf8jETe1RakcC4jvRfP2drMZ2Do4sJmEiBVxBx8CUBWGYm52S1prSBnGsnF4JSFnCRqrskio1Hi4saSK"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "CuqeFw7ot23qx2bLKFG4BJ87jiJakYrW25GY3rsm2HNG3KC9ug1RERjyTohJ825JiQqYt4onGopkApMf9PFTrsV"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "4fTL1E9kxdeJgzMut6nEYtoYBt1fpr3Nbqc4xXFBzF59jVtg5dfYQ8W4LhReHZn2Z2w5mNqodf6RbVApxu7nRix6"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "2NLM2PpTVjdzZSDL7avDA5d7ZgFXXoevGagCtwnJihgosBoDUwBen4HXjoyqDD64VBBQa1kkcFyShxefNJE4Pcon"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "3cAvTjucmPuPBoQfGpKaeMsT8ZeWp8bgzsyKLKqyyUnc2oUnmKSUy5HtWL8wfMHBmEHuspqo4xjJi6L3WHTnafE6"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "4Ldtn2Cc2ugaHhehhAt6fNmkMtVsD7oedkpUb5gUwrmHuytA4P8wWoqyL3unxnJuZTQosv74oXRfdP5MSY9qiURY"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "2gE4uuaUeKwCasEtwW6Nv6jp88u9HWmqnBvQz16vqi4g92M43EFKbnUxdFDHTxaLUP4p3XVn5vNwhiny1AB4aBWq"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2EFLj3bC7snvwQTUs2Vip7e7yHCg4vnh3egtok6hN98bcEmJ7MZxXiHM666RN3vebWfiqjXWa3CRxZWhSAEcM52G"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "2zusVgwBV2hRS9gBYwGgcgeFv2j2RJVsU9gHdK85fdUVx2ewoRxRhxr2BmdDdSTsGCk7Aq2BSPv66bunurgCPk21"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "3TVH5dqbNEXZiFjuCYfLpuohVdeZ8MbZcfR4hXNB1f7J479mA3pzFE3KYgwMVra8Q5tL3ti3hYznhyvgqQvvWugp"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "waHugyLgWu7tTwzTjvjAM4mC2wQP9tHtP2H7RKvXgs32hKirjwETDGJ1wRVnXEATiASJYnfiCLC3Rb12E8hfu68"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5bb1wvwgLRB8uzUhqy6E9zEysDCoX97LUzFqQ6RUrhhGXsXJec1pyfyrdYmniAPuXHmgrbQFkCsMneP4aQWr56nB"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2AE2gyNsuZwsjYqg8zp8Lf3Vh3j4LAzzGGDSYsc2YMnsYwSEXmA5wgj7tkj5C3jXmp7JdY7N66MBvhAPJ8TyC6jW"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "45g7bMWEQH2sKXGqEvjakeNRwudTzvENEpezwMfTW8V1kVYeGzmWHRQX6MB8vunXTuFi1YxFrKmdWv82X7Tczx33"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "3EJypZbZt7uTidBDEq1GPT9NNftYQiyM19Xdzcb8Mp6qVQqznNqsad3xAmTwqLAVamogFEDkgRWAKEgT3UKsGGo6"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "4yxVd4cB9FjG6FEig7aPUZt7AkR1pNRdhDHpqCSZZgWZRhuXWEqK4aAAB3v45QDwJHLDBHMYiUXgtvJCRgKZ6NwH"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "578pnmnRL9XvnoQPMcHUdUEijFmAPEqtiH3gNNFw8jA65xyoZWFQTx6p2Jy5fSRbBG55334s2fDY9P4dRUfu7nmD"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "EWr8nbetxU5yCGEarRcYksZLCD1qY4buADaa7p5EJPfdEsC2YQEDQ212XUfewhptYkXLeow1zcPWbEvP8JPnvHp"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "2wtRdmzFLfxfUrck1nP288ydQWS4b84Xvdm2CUrBwBNpMSzYA58mLTprYeMAi2rzbnvjTsUsZNueCY1HHQsPbgSs"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "3NALYhjMeoWXHT2ejQKUAgRD8bVGzWoMxfXsdWe613ff3sU8sjF8bH7iUNok1rbSYaem1jbadRgyPp22xACiD2bX"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "3ekwejDR1nRadZXb9WBqBRjjV8bEHmjJsWSj2V1mu6iPVnbuVjLWqRFu9TCkmnHuCje8BYZM7R7ZCtSqqJMya88J"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "4BHE58dP9sR1TiWtTMPEK8qMiYDqYYTv35cLbHKbFt21B7ViPuL3RSfwsUP3SMQAQurj2qTgKKuq7HoihzydGGYH"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "3um4MKagQuX5ANJfyR18t8fVnizshmwGAMZDEygqSmULEQHWg7eF9dXPbCLq8YEQcnfBMqXL1i6LC8Uies8bRNNE"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "3LPQZjS272UTAeHt7ExZLSA9By8rtYfTaq5vmVrsSJE4gFVse4iMLf9AqnaBVpHnCt5xGMRRnbHLmg7RN6K6NS9T"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2BhjroX7U1a84J8w5kH8LYtwvKK1LDT7QDwiBmwFKvYMnhTQ9NhQ6x1omavKxrzPbwuwyesJhL4HBwCz41Htn44t"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "cQrf8Uwi8iBFgrcrfio62ktPgbR1TawzoLCpcvuRcFLtaXpx5qLbQWer2kuGFNxfRGoS1ZW4ND8ue537qfjE8Cg"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "4yNHnCRgdQ1AqFRwyTic3nxNCpkB2nB2bn2tEbRnyBhB2Rj1dAJTPXanvZpk7JkGzTfHLonDpQZRiK9ftRAqmhsE"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "gLwmZhGHG4JuV3qTSv9RY5PApwemLn7Ky9PmStF5reMf5WvA7M47vrHqnVx6KPQNZDekvtYPx5wD4gASwWwAsmd"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "UA6FMfNVAhv8s7aDy96pqv4TG6Dq2ywECGK4SDEJtcoWaZyYAgegYZWG4FPEuGaERyP4BnKQ5iCjf3dc6BZbC69"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "3tn8dByaBusEPAjCsEMjGLLgm5Gw4coHXPFey5YQxxFAtwGEWtzq2RpCeTRrTAgRzysPKXzsLNi93KQorMMmWcu8"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "5NbiVkfeKK7i5koW3PohhyDS1T8rV1GU1dBfm1MnALNKriRRT95EsWaCh9YGZ6LQriE8X9vd4VHsmin5ymyVH2Rv"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5XP4wNNgNRpk7djsfyxtGAaChYdRgkP9ZMWE9W6vTy7xwJyrRonsiXWa2LXXhtoJMiwRAn6KKziACbE1vAknkCrx"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "3q212cFq1anUHwHomburqb9UMN4KFxL2jCCWa2AfLgDw6nXGeiCE8XEc1uo1iNzQQvB8WyHJmu53LWf9iq7cEXZU"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "4vf8cqVoQ2w2CdztpuDsLGNKGgNV1w8H5i79aTrPis9DHv9gKJrDyrMogNQb9jrk1wAMqREfyJ15XQTwekcPVtc8"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "Zk1aAm5c5nLVHUPxNWQA8AA7CB3grZZEXVX6RJ9F78pksEJQYeMBtqe446DXvoMNHTNLswSSWCYYuZq1GxH7vBz"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "4FAnXxj9EGn3muaF7f28oagzHcBNYC827KZEZYUfH8XemzkwrKe6R3L9jrh11mUR6RC7MWbM3dxrxBynyQAY1ueD"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "45L4KXU7M3tbntL32A5UCWjAt8X2W7qLcPZxiZZGLC5wxLDszsPDRZA3YwsiaAJsLM5PTQB9m99Q3jKPBLzpzUgr"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "3FaLiSQEBpv8H2JiMLLYEWJsyyBuF1Ka4eWHPAonDAGmDd4Rrb7McZZpvFKhTAhkTuWws8jsbL9VZ1HJHmdqENaN"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "GjosVLK51k9d61w66pNFAC3w5UP1R174FDEreN4mmpxrkNJGubCDnFAFWPPzpP5HmX6R3Y486jFmhy78oVyWSzB"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "5fuLgAua6RSft3cNXTysBy5movFigEJuJt34UibdkUwgNcaweHZapA3jHLMavNfMupxQVqhpT3XEqnLmFC5FQp45"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "2awhURmE9UERrwk9ttK3PzM8Zq5b4KPP9XDSxBoheRrydeVfue5dz8aQjKVEcHU1hU35oyuRXWF4eqCVc31pZeT2"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5gripqqhLugrXY9eXhjALkZeBFQYW55NZ7Y3GPLtcApTGmmY5db4N846Mdmy7EQPC3RTKd4Zs2XMSMEqsfgBX8Da"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "5kBCQ1bKZqtVK6HcwGYV3uCGkdFtx1EJk2SHwxfsSo8oP253i17MPAThmp3MEtRUftcwus2pKawuLcN7wrwMWJ4q"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "x7MW8ifF4nv7y8benf2eVQNGzhwoNVCNnNCmozfyBXDmzLi8HCiPVq2RxNzxAKzKE5Wr6ZJFppC7QEgEhDMQ9PL"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2CYPr4RFNnS5devCUFyuhckdd46kcVJL6kkJUTSf3J9YCiUVU3vdMSEzL4z5rwaCJ13uFGaQ4qcYTeT8pRNoZAUc"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "2tNeahM4ts46aiAWjDGX1qtue1pTQaDsYK2sb1mbCNuErzyLQwFn4mSt8RVYhjMFRSF8jbEFyHT4FEgYVrrgDi5s"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5oz52t9diA6bnBDz3GiFRK55EnCmUj4DqKsVMKgygoA2BJdAEpcecRLVSfhbKefMYMYofJeD1CepXKneNEvckDaQ"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "NSHD33D6PSUBX4CvHWpbaQ8JyzteNLraP83aRUYt4G98C9U6BvTw5CjQHqNSzPAZZRJ4Leqpw8xGNmXoUynigjQ"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "4ZdvmZDhYvPLruFj8ZH8CSzSKY4y9Urnt11CdDLheFxQFSYCmYgfTYEb75VB6tidy8dT61PUjfiALj8g5yj98JyN"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "aXxP9r4DX3jKiMN7dgbJgrn2H2NXBRA7gHKgV2Hm8uJX7rn4REPhsdW3DF9GuAUYyUzi1nJsafPu26KG4Ls2Fxn"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "66TETCJw4prM8DJHgMRvAL7gnqKsq17khVZPv1ktd5s9rEjY7xdvapsR7PNyaDQ18idcWgViUAuzBosZ2Bd7hi1W"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5MnCus6BRmKiXtGEzy8A4DtDegkCRrUdtavZcQSBkFv2VdPuMSE1Q8UK9r3HhweM26QxBm36ecLBQYrKfM81bCNE"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2xx5rZ3RdomN63Fa7qdZQMn5KHpCTLV34GfjcFgyx2c41JZrcNzbLD3vnzG3vKv41N5Eejqgc5xPCJodB5KySPQQ"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "3LsjrXizVt5ZrhpS7ihKa5iDs3BewfrazGouEgvFgw7o4ATrBwYjHR7XngJmiwccCMCWjb3wjGBJQaukBfUTaMA1"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "TPgA5m3Sy9LcV9nfJgSs82ofMAnnMZDgjP4JppDLquUfnieedLUrCU2WeAjgNSEPinhEELWwVbri29q1dwQQBkU"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "2L5ZWjdbBgZBtNPAnQw2xYiwj4ZbPjSkroPvUuDNwi9C7V79hnp3FRaRF1aacMmody8mkHm9vdeTgsxHFrRJLCKa"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "4XVJGLTTdB4ivfwfw7JJQR4K2RNZvd16v8XsF7C47XsTC5tVd9EDci67ZWPZsCzbf4vtZn7RVFr5PZUzq5V8YaRe"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2qJKkCdAB9F9HADRccT1nJS8vtVYQ1526Y2CWb5uP3fCnWYfiuhDsjQE7dEEYKZpaZsbKgm5JsYLjjGs4nUU4Z8k"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "oouGsQngvxfhqzK1MaGtXUUyWgtq76gGjV5WQHPPJ4cGFXwTqWgUZViuTLpUkCYnh6aZSJLcNFbk8RxWqCoxWma"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "zaMUuA29BmQQHpy2wv7uLmb8Y14SpZyjN9fAwKzbkYdHnNALZmVCpj7sBRG6f45cRhaTAbBSbhzYTSJ1F35rXAZ"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "Pvn9vF1zAP7H69jxvPkE2LFHevwo7Zdiz2XmrfJWThHaxoh5So3CKo3a5AvVmde2SSJgRFseWiM2rjMjtY8k5Af"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "MBshKXi6Y4rixXa28ADdKUftJ2gwkRcVxkoUsQuvMbdbbcTNWoLdYGahrWX7wZyHwuXdy2oU87znGGKmLduGaM4"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "2kxQxAm88xCkKeq1nD5mtPkC4CLej8NvXYvB7hgYReFrjCvDP6v3v31azY5uKTzTw5RrDxtY333X3tZVn6LpwFmY"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "525SgP1SbfANtWavJUdRod7eTjzYP4LcXxcTdKD5Lz5VM1cahyWJNxSdMhpMQ4RevFQpYhxiFDTXCbwd8RgVtJJs"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "4XGKUAU7AcxG3CZ1AvSFi2AJfC1XQZPftoFTt89Bj5JEtVxKesVRBakui4CkvPB9xJWcZCx4qDnMdjqnrzsLxe9x"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "41t6RWHHzYE3AE1YyX9TuzJbtHc6ioCoWGiBejtr9yETnK28NphjHFB9ePd36SrfvRwQ5sqB746yFJWC4689R6Ny"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "6WQSBU6jVVeCfVfkWhwFCWn8BMeNF6n1Ehd16QRsvW1Tv1ak6U98mXRWuaGwUueUdTQsJKgx6JiJAnaFTdhvhxn"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "H6Z9J8Qam6pBUA6z5KAVFKyqRR8amkJXD5wgMQRp1A8opxJd2kBi2CFznwPHpPhrJmUkoVYb6M1xq868EM1RBCi"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "4wv2ZxGrjV6AKvYLv8LUMU7U1wmU8Fk9u4QqQVihWP1VLS4bTyJi6R3nnTEPABir3F7wA2UW6gThgYf4MA4SUdvN"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "2a2EL49DgemNA2nJSDgjqPG2w4NmMQq3VCCghU57bpu7v3BWxvw8xMnFM26YEr1Atn13MvwzgT25xLhtivPtf4zL"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "4c4dGb6oZjoj465bS1GkDQVeuwUFFaWYGqBfh9REGVaMgK2FNBNPKd592ThPLeBSFoay3vjGNKyEp2aJydYHUPFi"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "FvyUSY2pJPLTMzJQhpvFt2GMxCwczACFdvWYKbN4zVng7Jr2MCGchyKDg1M9c9kv8nNAGCoF279HnQMixRsb872"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "3MSgQdQoP5nDHsRkXSqpAA3qazHMQs51WoDyH4PC8YZLV1WHrcRZsURqtPdy3E6751tsYqcfNBgj1YVqwqg1avEM"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "5R3Tttx6d6LBVoVH7JVp6LfRToK3NEENBFyb3jMyoSQZVQBSW768k8aFQK6mBxTpe2tF5EHHSEsGh6komrmdbDY4"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "48JsJJjjcDXZWe1zT61xnVJEFibRFfaLGbGY9kt3zrmBvCw3B5PAYDFFuuDj8fSW8Ly1heWadQemt1MvuvUR6vmu"
+  },
+  {
+    "iteration": "05_delegation record_usage_realtime on ER",
+    "signature": "3Jiz7HGrtEqbkNE8fu5rnLew7JgVVd6Jumo6DZTSRBjB3Utsnc6b2iek5QwQNXZKanYUQK2XZijg1FkaCHhkpYct"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "dsA15r3YUszSGVoZoXF63wWjPgX22JNpwcNKFMfDWu7ffFjLbWh2XpNZ7mcLQJv1woEvYEutYvbdJndDJJXWTPb"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "nDsxJj4KUuPT8ouUbPHdXETWmSuToeZKMYpAnPG6ZwMKmqu9s41nx5zLGbBZCPtCetHCnsqYLJcuYcjTB7RL6xY"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "51QRSMJ2bMNvKPGudGV1YAPiLdQsbsM8hQFCTcihDjSoxH482GNSXhoT55pWk8pCvoskbLM13WuPMZmuvgC6w8mq"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "2tBU2HfnrUvg6g6oQuAgTY4bzt6jaxjmJdnQZ53Mu8VwKkLUMaCB6U3McLfpAF6ENzTXfPuSdm8BtPuJGzh68xUB"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "WRsKy8aJM5CyYc3gqpT9xxkM93RkzBEhuKQ5TKWXnXD3XzFiZ4HYDfY9Mo6idxQrruVAU1cZxbqjnCt1S4gZqpJ"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "2fFEASmeLR9ak8EFHNsHo1Ue22w54kDqwzuyqNuiMFw9QDXmPzm9RT8vLxb3ZNQxt1Jdw9qXnjeCRH9s4TZ9S5Ti"
+  },
+  {
+    "iteration": "05_delegation record_usage_realtime on ER",
+    "signature": "4vxc64iQtnLqkcAvPnbeHV3ErxGZBDgmxECDZ3zZ5UUcp3T57YZEsyFo2PQyKNfVN9fuFo6JUxTuGBGf5U3pER8V"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "xP3sEnBaXqdgRqaKwkTNvSbwoCgz53gVuM6qfXp2c7zEynESYopvkNcLwb6xSMjee5ZrWo8Xhaehkdu2xKgTgW2"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "3pU2Nk5S9jvrngXtdj5cHNauNWa1XtyR8fgR6VFzF22jp1zF4YWdqvK94CR756GYPJfYFAw6N1qbCitSuMMvSshs"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "2tvNepCzhSUPw2h1SLQDTYFZhSP1bT8MANoBCkbkwLFkTC39iZuys9Rr7JuKkzkwHfsEPZChmfyZfdKpsvYxnZVP"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "nj8ByBihTDNYMsu1EoNZ822Mg9ncCNGaAqpCfQfPhCzcPe85HqNXeV8NFc2s9dCN5RwTXSKcsmbzsKmeSFxHkaQ"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "2XZNavChMQMUm2ckngmpJk8pXhx1idwq4akKGdGBTV1LYqYniJ2begzbR99QhZH6kixQcoDAorxTnS31ENMRn2zt"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "5oJBFWKEo7v2NRPa3tmTXyERU7ahsQuphjaMgfDtewAuhiPu7BPBufzgffKUqq4um5WASAekP5HcpQTG6G84fi7d"
+  },
+  {
+    "iteration": "05_delegation record_usage_realtime on ER",
+    "signature": "3vmk5seCLPMtRANvgTBqvBCRCHQsQaEhfHEDWqGiB8UCp8kQcCtAHLgkPZrHd1DnTNYbsyMWAwmfxRfMvoXB8Y6E"
+  },
+  {
+    "iteration": "05_delegation submit_usage_checkpoint on ER and confirm on base layer",
+    "signature": "5bUU14BcpLhUo6A3Bj2PzMa4DDU8VWD1s7WVTY1V4tGwLb4xY5vh6DuDheE2oHVJLabsTrkRZkWTM644pAABSB8d"
+  },
+  {
+    "iteration": "04_api_key creates an api key with policy",
+    "signature": "ANJa1AiYMDwrEtPBNWPmcPg8ZwnTVU8emRTzwDxAk6MXECmCnmhFev8mgMaC21xxHreofkNY1enaNXtJB3Lhg98"
+  },
+  {
+    "iteration": "04_api_key attach_policy_to_key",
+    "signature": "35a1N1ojFyybsUN67oickSu5t6MKdWSjHRRcYLz5AS7w1ctzzSGhJhzcuehYTEUYCkLyFrGDVeZ9sK6AU9X5bNQH"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Active -> Throttled",
+    "signature": "AVr3S71TWtowtZihYQaVePXnt6srJ1mxwGQ8roPy9TJycF36N9yM5GHhHuXrZnDauvGUg4iDJTZWVboRLcXpG1E"
+  },
+  {
+    "iteration": "04_api_key set_api_key_status: Throttled -> Active",
+    "signature": "3v8vkaAWBoHjTJKYaVfitFonJuNVR8Ks9NAv3v2dmmmrgJWT1hMk9zwwL6avFyiSeBPWeKSb7xpNX8Bgcbv7GkhE"
+  },
+  {
+    "iteration": "04_api_key revoke_api_key",
+    "signature": "32zDb7pAiqJE3VmNDV1cYV8dMcyPrhVATfbR6448dZ8uz5HrGvouD2q8reqVKVgos9dQ2MNvKNp2C6LZkZv4mvNd"
+  },
+  {
+    "iteration": "05_delegation prepare_delegation + delegate_usage on Solana (base layer)",
+    "signature": "34mqdpdf3LqZigWTtJmPwqghBh4fgv7Wh8ZtjAdLbeNy2g4Vww3uBWnNWNSRHMiXjaKuaY37kWPDFADeRmK3Rvsg"
+  },
+  {
+    "iteration": "05_delegation record_usage_realtime on ER",
+    "signature": "3Ao1yioCRrCHgWuP9Ta6KHUWo2mApArLq7GbcWGji6Kb7e2Kr2F2xVkiMGkzuhnXRQyCCFgRjgry74XJ6cMkoFnz"
+  },
+  {
+    "iteration": "05_delegation submit_usage_checkpoint on ER and confirm on base layer",
+    "signature": "2jcahoLdYVaVGAxrEBL5QxPTXqEqDFrsJsSfFZjBkMqeRivPfdpAuqzqiAUVDrGMts8XwtAZxqU8x7X9GH6z7WNE"
+  },
+  {
+    "iteration": "05_delegation undelegate_usage on ER to Solana",
+    "signature": "YRgtf5YCJcUiVaZaVUs4Uxo3XVvenWERnYcU4rG2fsvCUqFBXVAPDHfPpTDCVAFgaLFooBXxqC9FnGBtBTbnm7U"
+  }
+]

@@ -12,11 +12,6 @@ pub struct UndelegateUsage<'info> {
 
     #[account(mut)]
     pub delegated_usage: Account<'info, DelegatedUsageAccount>,
-
-    /// CHECK magic
-    pub magic_context: AccountInfo<'info>,
-    /// CHECK magic
-    pub magic_program: AccountInfo<'info>,
 }
 
 impl<'info> UndelegateUsage<'info> {

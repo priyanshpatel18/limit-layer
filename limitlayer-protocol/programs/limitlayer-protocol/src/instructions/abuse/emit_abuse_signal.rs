@@ -24,7 +24,7 @@ pub struct EmitAbuseSignal<'info> {
         seeds = [
             ABUSE_SIGNAL_SEED.as_bytes(),
             reputation.subject.as_ref(),
-            Clock::get().expect("Clock sysvar required").unix_timestamp.to_le_bytes().as_ref()
+            clock.unix_timestamp.to_le_bytes().as_ref()
         ],
         bump
     )]
@@ -32,6 +32,8 @@ pub struct EmitAbuseSignal<'info> {
 
     #[account(mut)]
     pub reputation: Account<'info, ReputationAccount>,
+
+    pub clock: Sysvar<'info, Clock>,
 
     pub system_program: Program<'info, System>,
 }
@@ -45,7 +47,7 @@ impl<'info> EmitAbuseSignal<'info> {
     ) -> Result<()> {
         require!(severity <= MAX_SEVERITY, ErrorCode::InvalidSeverity);
 
-        let now = Clock::get()?.unix_timestamp;
+        let now = self.clock.unix_timestamp;
 
         self.abuse_signal.set_inner(AbuseSignal {
             reporter_service: self.service.key(),

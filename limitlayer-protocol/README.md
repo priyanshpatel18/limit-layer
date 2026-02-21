@@ -18,10 +18,10 @@ The protocol uses Program Derived Addresses (PDAs) throughout and integrates wit
 ## Program ID
 
 ```
-LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6
+LLycnqAcLQoVRqQ1jrisJL4oacnkDE6sZnM6MHHxixm
 ```
 
-- [Solana Explorer (Devnet)](https://explorer.solana.com/address/LiLyK9amebjWhianExqRjqHMbgdANjEM2MWB9fHT5Q6?cluster=devnet)
+- [Solana Explorer (Devnet)](https://explorer.solana.com/address/LLycnqAcLQoVRqQ1jrisJL4oacnkDE6sZnM6MHHxixm?cluster=devnet)
 
 ## Architecture
 
@@ -411,7 +411,74 @@ The protocol includes comprehensive error handling:
 anchor test
 ```
 
-Test results will be added as the test suite is expanded.
+### Verified Test Transactions (Devnet)
+
+Proof of successful test execution. Links point to [Solana Explorer (Devnet)](https://explorer.solana.com/?cluster=devnet).
+
+#### 01 Protocol
+
+| Test | Transaction |
+|------|-------------|
+| initializes protocol with valid params | [3afSTr...ZhVc](https://explorer.solana.com/tx/3afSTrDrwdRby3YhBLYE7CeJipS9aKb8YprjanBVWzjzXR1s3y53s7Akh4Lav6EhQ3nkYDSJRnFVmzA3JtUEZhVc?cluster=devnet) |
+| updates protocol fee | [3WmCwp...DvXgt](https://explorer.solana.com/tx/3WmCwp5bnUyRiPcncczBcdVPN4tULEKVQKZQSUFAaGdHzQQEUxwtXUgZmSUsoGnCdFj6ueSrCfXWE1rpSrZDvXgt?cluster=devnet) |
+| updates protocol treasury | [5aXrHC...sgdEg](https://explorer.solana.com/tx/5aXrHCssEY49A2av1GxtBvwk2wCVcqFky6KpUShxmBGV5uXDD4YLStC8xKXpB4HDnvoPgWEAL13TAdWAXovsgdEg?cluster=devnet) |
+| updates protocol paused state | [5BiDgD...SGg62](https://explorer.solana.com/tx/5BiDgDRFEW9xy1aHbq6yWnJpQxe32NZM82XSikMyV4cPRB7J74KTUVUSepXRuG5vRmzAjWcEyTppQL6mKu5SGg62?cluster=devnet) |
+
+#### 02 Service
+
+| Test | Transaction |
+|------|-------------|
+| creates a service with valid name and default policy | [3Tabo4...Qi4](https://explorer.solana.com/tx/3Tabo47fovNL3baFP2DXeecidMPWsqrPNUEyS7gZh139sYbHnih8vnFGGVoWBaQGJvBzeCsyaxW39n8hkeW6bQi4?cluster=devnet) |
+| creates a second service (service_count increments) | [3eogUD...VLR](https://explorer.solana.com/tx/3eogUDbers4uFYWpxmVdSe1iXKGJyXJ5UufgFjzo1j24CR1uUTi43KUE2y9cxcB8B9HW9Dm4PAYE6AjkwrkkmVLR?cluster=devnet) |
+| rejects create_service when protocol is paused | [5UNm73...NEq](https://explorer.solana.com/tx/5UNm7345oRSKgQrpodsJe7FLjWAbFygoB2ao7cn7REhTx3wpXHsyPdxZv2AXNZBvBZBdXGy3FHMSwQ4zKS333NEq?cluster=devnet) |
+| updates service authority | [46Zu5S...oc3C](https://explorer.solana.com/tx/46Zu5SX6hKYGnZCsctVFE6cFw2UHRnaMb8Goms25uUSi9BhKYvvxhfbbSJdBTHNSLozkJwveojJoWPWp72YEoc3C?cluster=devnet) |
+| updates service default policy | [377mF3...b5Ao](https://explorer.solana.com/tx/377mF34CcYUtBEipcY77pZ4aG8dEgSgkYaCi3G9VYWLgpvW9pkr6vgZZKeLyffCCcBZ9FjMvjzEbVtDUb9m8b5Ao?cluster=devnet) |
+| set_service_status: Active -> Paused | [4oj2gh...2aWx](https://explorer.solana.com/tx/4oj2gh2VeH4JZn4HGuAeQp7gzbC3ytPw1LvaNoBLg7xAWaZBY6tkCtZW9LFzsEdGtZq2H5HmvTzWUqidzKQ22aWx?cluster=devnet) |
+| set_service_status: Paused -> Active | [4MKToZ...fjvp](https://explorer.solana.com/tx/4MKToZqQF6odYRz4Bjp8zb57EWsuitkmTnPysZLLNEMDDcm97zRQBkF5XUBMvYzxQJQjwBefvQFUUoezWATHfjvp?cluster=devnet) |
+| set_service_status: Active -> Disabled | [2RC33h...XrLp](https://explorer.solana.com/tx/2RC33hR47LydbeBCYV5JZWHbgu2FD3PpkgRMioS55RUneEoX1mpP94VSQJiNnXtx2kfSR5FL2XdHiZiS21B4XrLp?cluster=devnet) |
+| allows status transition Paused -> Disabled on second service | [2Fwrcp...pmK](https://explorer.solana.com/tx/2FwrcpyfayYHHnzmN3Th4KGBZ3bf3Q7NpUoP2ASr72SBdQUXzAfiE5SCnmRzzg1c3N4EjEwpnJYK3ePJFLjdupmK?cluster=devnet) |
+
+#### 03 Policy
+
+| Test | Transaction |
+|------|-------------|
+| creates a policy with valid params | [2LfYUA...HLSu](https://explorer.solana.com/tx/2LfYUAxKFXYPiXqDSGsu4pKY8RXPV8PWzdchgYQ7oSN8PxynGYzuSHy9cKrrSDU3fPadhadCGrkn3Hd5TkLfHLSu?cluster=devnet) |
+| updates policy | [2HTvZL...HBGy](https://explorer.solana.com/tx/2HTvZLopR4qYSCRh52rJ3a4GQrHo7QZ3yR2q3cqT5XLKQhjT9EioCtXdRwZoNobj72grcFQ3DvtdQD1yf4gPHBGy?cluster=devnet) |
+
+#### 04 API Key
+
+| Test | Transaction |
+|------|-------------|
+| creates an api key with policy | [pm4ujx...B8Y](https://explorer.solana.com/tx/pm4ujxz6KBMpmLr5kfoCavs1yD9Zkfg2Z4PXD17YGeg7Ns6CzvcopJsvbyqrtfgYA3cRjMUFZQv9EuSRwdcCB8Y?cluster=devnet) |
+| attach_policy_to_key | [4Mrgbq...bXff](https://explorer.solana.com/tx/4Mrgbqbi7BJ6XMeH87FQWRQst6f1mW3mh4gJXoCGzKoMRKXMAvPNDh4zWBv4EYAC2FsDGMtGdxkLbwCV7rbdbXff?cluster=devnet) |
+| set_api_key_status: Active -> Throttled | [Chkrz1...si7A](https://explorer.solana.com/tx/Chkrz1H9xMvNMj8a8Yta8rcfS4nQx9CHwU1RZEhWHPhb1mRui5KSGRQWtTCo9BR674W7MqcwdLek9aAR1mzsi7A?cluster=devnet) |
+| set_api_key_status: Throttled -> Active | [36eZWA...hLKW](https://explorer.solana.com/tx/36eZWAhC9jg1ZZWntp4XbXpFftjjPL4rKWMRuwtEaRPMrYMszDzaWsomsn7tprxudNvWeD7KjFNja2tBHPjLhLKW?cluster=devnet) |
+| revoke_api_key | [3UAxBM...fo1e](https://explorer.solana.com/tx/3UAxBMjJ13dm26kqbAmWbwSz8cPw89YJ14ojiK139Vewi4q7qjMpqkE5Zi7tv4z3yHProjg4U3JCjsHp8u8Bfo1e?cluster=devnet) |
+
+#### 05 Delegation
+
+| Test | Transaction |
+|------|-------------|
+| prepare_delegation + delegate_usage on Solana (base layer) | [34mqdp...Rvsg](https://explorer.solana.com/tx/34mqdpdf3LqZigWTtJmPwqghBh4fgv7Wh8ZtjAdLbeNy2g4Vww3uBWnNWNSRHMiXjaKuaY37kWPDFADeRmK3Rvsg?cluster=devnet) |
+| record_usage_realtime on ER | [3Ao1yi...Fnz](https://explorer.solana.com/tx/3Ao1yioCRrCHgWuP9Ta6KHUWo2mApArLq7GbcWGji6Kb7e2Kr2F2xVkiMGkzuhnXRQyCCFgRjgry74XJ6cMkoFnz?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app) |
+| submit_usage_checkpoint on ER and confirm on base layer | [2jcaho...WNE](https://explorer.solana.com/tx/2jcahoLdYVaVGAxrEBL5QxPTXqEqDFrsJsSfFZjBkMqeRivPfdpAuqzqiAUVDrGMts8XwtAZxqU8x7X9GH6z7WNE?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app) |
+| undelegate_usage on ER to Solana | [YRgtf5...m7U](https://explorer.solana.com/tx/YRgtf5YCJcUiVaZaVUs4Uxo3XVvenWERnYcU4rG2fsvCUqFBXVAPDHfPpTDCVAFgaLFooBXxqC9FnGBtBTbnm7U?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app) |
+
+#### 06 Enforcement
+
+| Test | Transaction |
+|------|-------------|
+| before | [3WfYga...5wG](https://explorer.solana.com/tx/3WfYgaLmGREGFQXxzw9XieiT17DQFDCCjhR8qG7Vd3qboK4F25GoBqGoWrJYKViA7hHZdxQFUimSabc4J4a4u5wG?cluster=devnet) |
+| manual_block_key blocks an api key | [38vDaN...UaF](https://explorer.solana.com/tx/38vDaNvHXq16uYevDgFBG14sKSo4HLuUdc1fTsMFwrPk7zUGUKir1639QyGxWzQdtHLa8TUEgFz6Smc2WRjEuUaF?cluster=devnet) |
+| manual_unblock_key unblocks an api key | [27EtWH...dniv](https://explorer.solana.com/tx/27EtWHoZEe3JU2EiKPr59o111aGByobkfimwrm1KhFjq9V5mGqNFhoBEfAFrAputQfd5s8GstiCc2WL97HcUdniv?cluster=devnet) |
+
+#### 07 Abuse & Reputation
+
+| Test | Transaction |
+|------|-------------|
+| emit_abuse_signal creates signal and updates reputation | [2dVNPp...RPU](https://explorer.solana.com/tx/2dVNPpwJBaGQ5sP4gX6bsMQevGHocxeYNBMLSmb29y9PLFZJ9GC98fGdDo2uMdJJAqCVLQpxjW9CinjLpPmhjRPU?cluster=devnet) |
+| update_reputation applies delta | [1Ex2oC...iuk](https://explorer.solana.com/tx/1Ex2oCi7oSErzSHeqtr1CJbWCaZLd2U15HWbA11Ej3uoNjjzKgTkPrYnBZ85SA6W86kyqjWkPW4FtXRoTqF7iuk?cluster=devnet) |
+| update_reputation clamps to REPUTATION_MAX | [kycwWm...XC1](https://explorer.solana.com/tx/kycwWmsTPv4osKeSiojgy3jeCyFfxSm419f3ycbx8LPJ64Kx546ohY46bUuNotxwWHUAKvPVZUjmZhLtCRFUXC1?cluster=devnet) |
 
 ## Security Features
 

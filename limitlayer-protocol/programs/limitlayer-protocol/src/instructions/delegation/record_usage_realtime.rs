@@ -12,7 +12,7 @@ pub struct RecordUsageRealtime<'info> {
     #[account(mut)]
     pub delegated_usage: Account<'info, DelegatedUsageAccount>,
 
-    #[account(mut)]
+    /// Read-only; only delegated_usage can be written on ER
     pub api_key: Account<'info, ApiKeyAccount>,
 
     pub policy: Account<'info, RateLimitPolicy>,
