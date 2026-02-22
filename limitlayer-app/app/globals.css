@@ -26,6 +26,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -59,7 +60,7 @@
   --foreground: var(--palette-navy);
   --card: var(--palette-white);
   --card-foreground: var(--palette-navy);
-  --popover: var(--palette-white);
+  --popover: color-mix(in srgb, var(--palette-white) 12%, var(--palette-white));
   --popover-foreground: var(--palette-navy);
   --primary: var(--palette-red);
   --primary-foreground: var(--palette-white);
@@ -94,7 +95,7 @@
   --foreground: var(--palette-white);
   --card: color-mix(in srgb, var(--palette-white) 5%, var(--palette-navy));
   --card-foreground: var(--palette-white);
-  --popover: color-mix(in srgb, var(--palette-white) 5%, var(--palette-navy));
+  --popover: color-mix(in srgb, var(--palette-rosered) 10%, var(--palette-navy));
   --popover-foreground: var(--palette-white);
   --primary: var(--palette-red);
   --primary-foreground: var(--palette-white);

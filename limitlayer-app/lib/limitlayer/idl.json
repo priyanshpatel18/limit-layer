@@ -1,0 +1,2632 @@
+{
+  "address": "LLycnqAcLQoVRqQ1jrisJL4oacnkDE6sZnM6MHHxixm",
+  "metadata": {
+    "name": "limitlayer_protocol",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "attach_policy_to_key",
+      "discriminator": [
+        36,
+        27,
+        4,
+        69,
+        131,
+        185,
+        229,
+        138
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "api_key",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_api_key",
+      "discriminator": [
+        239,
+        195,
+        250,
+        230,
+        153,
+        63,
+        174,
+        174
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  116,
+                  111,
+                  99,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  112,
+                  105,
+                  95,
+                  107,
+                  101,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "protocol.api_key_count",
+                "account": "ProtocolState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "delegated_usage",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  101,
+                  100,
+                  95,
+                  117,
+                  115,
+                  97,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "api_key"
+              }
+            ]
+          }
+        },
+        {
+          "name": "reputation",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  112,
+                  117,
+                  116,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "policy",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "create_policy",
+      "discriminator": [
+        27,
+        81,
+        33,
+        27,
+        196,
+        103,
+        246,
+        53
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "service",
+          "writable": true
+        },
+        {
+          "name": "policy",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  105,
+                  99,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "service"
+              },
+              {
+                "kind": "account",
+                "path": "service.total_usage_units",
+                "account": "ServiceAccount"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "requests_per_window",
+          "type": "u64"
+        },
+        {
+          "name": "window_seconds",
+          "type": "u64"
+        },
+        {
+          "name": "burst_limit",
+          "type": "u64"
+        },
+        {
+          "name": "cost_per_request",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "create_service",
+      "discriminator": [
+        1,
+        254,
+        91,
+        243,
+        178,
+        196,
+        28,
+        245
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  116,
+                  111,
+                  99,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "service",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  101,
+                  114,
+                  118,
+                  105,
+                  99,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "protocol.service_count",
+                "account": "ProtocolState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "default_policy",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "delegate_usage",
+      "discriminator": [
+        51,
+        8,
+        247,
+        107,
+        27,
+        250,
+        87,
+        20
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "docs": [
+            "Payer for delegation CPI"
+          ],
+          "signer": true
+        },
+        {
+          "name": "api_key"
+        },
+        {
+          "name": "buffer_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  117,
+                  102,
+                  102,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                4,
+                244,
+                159,
+                91,
+                36,
+                204,
+                40,
+                75,
+                153,
+                168,
+                59,
+                201,
+                253,
+                232,
+                164,
+                117,
+                66,
+                6,
+                26,
+                242,
+                19,
+                61,
+                116,
+                197,
+                237,
+                40,
+                187,
+                221,
+                139,
+                152,
+                168,
+                126
+              ]
+            }
+          }
+        },
+        {
+          "name": "delegation_record_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "delegation_metadata_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110,
+                  45,
+                  109,
+                  101,
+                  116,
+                  97,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "pda",
+          "writable": true
+        },
+        {
+          "name": "owner_program",
+          "address": "LLycnqAcLQoVRqQ1jrisJL4oacnkDE6sZnM6MHHxixm"
+        },
+        {
+          "name": "delegation_program",
+          "address": "DELeGGvXpWV2fqJUhqcF5ZSYMS4JTLjteaAMARRSaeSh"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "execution_region",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "emit_abuse_signal",
+      "discriminator": [
+        215,
+        252,
+        126,
+        56,
+        85,
+        246,
+        225,
+        137
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "abuse_signal",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  98,
+                  117,
+                  115,
+                  101,
+                  95,
+                  115,
+                  105,
+                  103,
+                  110,
+                  97,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "reputation.subject",
+                "account": "ReputationAccount"
+              },
+              {
+                "kind": "account",
+                "path": "clock.unix_timestamp"
+              }
+            ]
+          }
+        },
+        {
+          "name": "reputation",
+          "writable": true
+        },
+        {
+          "name": "clock",
+          "address": "SysvarC1ock11111111111111111111111111111111"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "severity",
+          "type": "u8"
+        },
+        {
+          "name": "category",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "evaluate_enforcement",
+      "discriminator": [
+        17,
+        118,
+        53,
+        154,
+        88,
+        224,
+        240,
+        42
+      ],
+      "accounts": [
+        {
+          "name": "api_key",
+          "writable": true
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "delegated_usage"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_protocol",
+      "discriminator": [
+        188,
+        233,
+        252,
+        106,
+        134,
+        146,
+        202,
+        91
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  116,
+                  111,
+                  99,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "protocol_fee_bps",
+          "type": "u16"
+        },
+        {
+          "name": "treasury",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "manual_block_key",
+      "discriminator": [
+        253,
+        137,
+        79,
+        106,
+        163,
+        45,
+        42,
+        145
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "manual_unblock_key",
+      "discriminator": [
+        87,
+        10,
+        89,
+        229,
+        86,
+        25,
+        115,
+        184
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "prepare_delegation",
+      "discriminator": [
+        245,
+        172,
+        11,
+        80,
+        50,
+        242,
+        5,
+        62
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "delegated_usage",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  101,
+                  100,
+                  95,
+                  117,
+                  115,
+                  97,
+                  103,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "api_key"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "execution_region",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "process_undelegation",
+      "discriminator": [
+        196,
+        28,
+        41,
+        206,
+        48,
+        37,
+        51,
+        167
+      ],
+      "accounts": [
+        {
+          "name": "base_account",
+          "writable": true
+        },
+        {
+          "name": "buffer"
+        },
+        {
+          "name": "payer",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "account_seeds",
+          "type": {
+            "vec": "bytes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "record_usage_realtime",
+      "discriminator": [
+        96,
+        208,
+        69,
+        9,
+        86,
+        36,
+        171,
+        19
+      ],
+      "accounts": [
+        {
+          "name": "delegated_usage",
+          "writable": true
+        },
+        {
+          "name": "api_key",
+          "docs": [
+            "Read-only; only delegated_usage can be written on ER"
+          ]
+        },
+        {
+          "name": "policy"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "revoke_api_key",
+      "discriminator": [
+        243,
+        12,
+        2,
+        136,
+        215,
+        55,
+        213,
+        183
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_api_key_status",
+      "discriminator": [
+        233,
+        204,
+        58,
+        195,
+        221,
+        32,
+        77,
+        125
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "api_key",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_status",
+          "type": {
+            "defined": {
+              "name": "ApiKeyStatus"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_service_status",
+      "discriminator": [
+        194,
+        188,
+        10,
+        145,
+        245,
+        118,
+        238,
+        250
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_status",
+          "type": {
+            "defined": {
+              "name": "ServiceStatus"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "submit_usage_checkpoint",
+      "discriminator": [
+        19,
+        147,
+        65,
+        192,
+        20,
+        72,
+        193,
+        125
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "delegated_usage",
+          "writable": true
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "undelegate_usage",
+      "discriminator": [
+        192,
+        149,
+        204,
+        105,
+        201,
+        154,
+        41,
+        1
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "delegated_usage",
+          "writable": true
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_policy",
+      "discriminator": [
+        212,
+        245,
+        246,
+        7,
+        163,
+        151,
+        18,
+        57
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service"
+        },
+        {
+          "name": "policy",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "requests_per_window",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "window_seconds",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "burst_limit",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "cost_per_request",
+          "type": {
+            "option": "u64"
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_protocol",
+      "discriminator": [
+        206,
+        25,
+        218,
+        114,
+        109,
+        41,
+        74,
+        173
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  116,
+                  111,
+                  99,
+                  111,
+                  108
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "new_fee_bps",
+          "type": {
+            "option": "u16"
+          }
+        },
+        {
+          "name": "new_treasury",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "paused",
+          "type": {
+            "option": "bool"
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_reputation",
+      "discriminator": [
+        194,
+        220,
+        43,
+        201,
+        54,
+        209,
+        49,
+        178
+      ],
+      "accounts": [
+        {
+          "name": "reputation",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "delta",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "update_service",
+      "discriminator": [
+        46,
+        169,
+        26,
+        33,
+        191,
+        78,
+        40,
+        221
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "service",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_authority",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "new_default_policy",
+          "type": {
+            "option": "pubkey"
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "AbuseSignal",
+      "discriminator": [
+        216,
+        14,
+        121,
+        129,
+        198,
+        125,
+        3,
+        181
+      ]
+    },
+    {
+      "name": "ApiKeyAccount",
+      "discriminator": [
+        205,
+        218,
+        27,
+        32,
+        8,
+        107,
+        172,
+        106
+      ]
+    },
+    {
+      "name": "DelegatedUsageAccount",
+      "discriminator": [
+        129,
+        247,
+        215,
+        204,
+        26,
+        215,
+        31,
+        87
+      ]
+    },
+    {
+      "name": "ProtocolState",
+      "discriminator": [
+        33,
+        51,
+        173,
+        134,
+        35,
+        140,
+        195,
+        248
+      ]
+    },
+    {
+      "name": "RateLimitPolicy",
+      "discriminator": [
+        220,
+        194,
+        242,
+        221,
+        245,
+        108,
+        71,
+        242
+      ]
+    },
+    {
+      "name": "ReputationAccount",
+      "discriminator": [
+        19,
+        185,
+        177,
+        157,
+        34,
+        87,
+        67,
+        233
+      ]
+    },
+    {
+      "name": "ServiceAccount",
+      "discriminator": [
+        72,
+        33,
+        73,
+        146,
+        208,
+        186,
+        107,
+        192
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "AbuseSignalEmitted",
+      "discriminator": [
+        41,
+        228,
+        86,
+        153,
+        40,
+        127,
+        162,
+        252
+      ]
+    },
+    {
+      "name": "ApiKeyCreated",
+      "discriminator": [
+        64,
+        2,
+        19,
+        158,
+        93,
+        200,
+        123,
+        42
+      ]
+    },
+    {
+      "name": "ApiKeyRevoked",
+      "discriminator": [
+        91,
+        214,
+        0,
+        145,
+        95,
+        139,
+        234,
+        194
+      ]
+    },
+    {
+      "name": "ApiKeyStatusChanged",
+      "discriminator": [
+        5,
+        232,
+        100,
+        241,
+        251,
+        205,
+        134,
+        87
+      ]
+    },
+    {
+      "name": "EnforcementEvaluated",
+      "discriminator": [
+        77,
+        15,
+        43,
+        20,
+        220,
+        61,
+        124,
+        2
+      ]
+    },
+    {
+      "name": "KeyManuallyBlocked",
+      "discriminator": [
+        1,
+        152,
+        214,
+        197,
+        141,
+        11,
+        250,
+        22
+      ]
+    },
+    {
+      "name": "KeyManuallyUnblocked",
+      "discriminator": [
+        208,
+        51,
+        169,
+        191,
+        209,
+        138,
+        210,
+        77
+      ]
+    },
+    {
+      "name": "PolicyAttachedToKey",
+      "discriminator": [
+        64,
+        21,
+        54,
+        215,
+        97,
+        25,
+        120,
+        154
+      ]
+    },
+    {
+      "name": "PolicyCreated",
+      "discriminator": [
+        59,
+        189,
+        65,
+        121,
+        86,
+        157,
+        108,
+        10
+      ]
+    },
+    {
+      "name": "PolicyUpdated",
+      "discriminator": [
+        225,
+        112,
+        112,
+        67,
+        95,
+        236,
+        245,
+        161
+      ]
+    },
+    {
+      "name": "ProtocolInitialized",
+      "discriminator": [
+        173,
+        122,
+        168,
+        254,
+        9,
+        118,
+        76,
+        132
+      ]
+    },
+    {
+      "name": "ProtocolUpdated",
+      "discriminator": [
+        52,
+        35,
+        157,
+        26,
+        20,
+        117,
+        63,
+        218
+      ]
+    },
+    {
+      "name": "ReputationUpdated",
+      "discriminator": [
+        26,
+        36,
+        187,
+        150,
+        235,
+        90,
+        106,
+        89
+      ]
+    },
+    {
+      "name": "ServiceCreated",
+      "discriminator": [
+        232,
+        107,
+        180,
+        200,
+        214,
+        120,
+        171,
+        227
+      ]
+    },
+    {
+      "name": "ServiceStatusChanged",
+      "discriminator": [
+        40,
+        101,
+        223,
+        0,
+        120,
+        227,
+        183,
+        102
+      ]
+    },
+    {
+      "name": "ServiceUpdated",
+      "discriminator": [
+        184,
+        118,
+        4,
+        188,
+        134,
+        109,
+        194,
+        235
+      ]
+    },
+    {
+      "name": "UsageCheckpointSubmitted",
+      "discriminator": [
+        239,
+        66,
+        102,
+        197,
+        6,
+        196,
+        176,
+        250
+      ]
+    },
+    {
+      "name": "UsageDelegated",
+      "discriminator": [
+        13,
+        21,
+        74,
+        21,
+        58,
+        47,
+        169,
+        129
+      ]
+    },
+    {
+      "name": "UsageRecordedRealtime",
+      "discriminator": [
+        187,
+        105,
+        226,
+        248,
+        26,
+        13,
+        196,
+        224
+      ]
+    },
+    {
+      "name": "UsageUndelegated",
+      "discriminator": [
+        172,
+        46,
+        230,
+        193,
+        37,
+        253,
+        248,
+        23
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidInput",
+      "msg": "Invalid input"
+    },
+    {
+      "code": 6002,
+      "name": "MathOverflow",
+      "msg": "Math overflow"
+    },
+    {
+      "code": 6003,
+      "name": "ProtocolPaused",
+      "msg": "Protocol is paused"
+    },
+    {
+      "code": 6004,
+      "name": "ProtocolAlreadyInitialized",
+      "msg": "Protocol already initialized"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidProtocolFee",
+      "msg": "Invalid protocol fee"
+    },
+    {
+      "code": 6006,
+      "name": "ServiceNameTooLong",
+      "msg": "Service name too long"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidService",
+      "msg": "Invalid service"
+    },
+    {
+      "code": 6008,
+      "name": "ServiceDisabled",
+      "msg": "Service disabled"
+    },
+    {
+      "code": 6009,
+      "name": "InvalidServiceStatusTransition",
+      "msg": "Invalid service status transition"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidPolicy",
+      "msg": "Invalid policy"
+    },
+    {
+      "code": 6011,
+      "name": "PolicyDisabled",
+      "msg": "Policy disabled"
+    },
+    {
+      "code": 6012,
+      "name": "InvalidRateLimitConfig",
+      "msg": "Invalid rate limit configuration"
+    },
+    {
+      "code": 6013,
+      "name": "InvalidApiKey",
+      "msg": "Invalid API key"
+    },
+    {
+      "code": 6014,
+      "name": "ApiKeyInactive",
+      "msg": "API key inactive"
+    },
+    {
+      "code": 6015,
+      "name": "ApiKeyBlocked",
+      "msg": "API key blocked"
+    },
+    {
+      "code": 6016,
+      "name": "ApiKeyRevoked",
+      "msg": "API key revoked"
+    },
+    {
+      "code": 6017,
+      "name": "InvalidApiKeyStatusTransition",
+      "msg": "Invalid API key status transition"
+    },
+    {
+      "code": 6018,
+      "name": "AlreadyDelegated",
+      "msg": "Already delegated"
+    },
+    {
+      "code": 6019,
+      "name": "NotDelegated",
+      "msg": "Not delegated"
+    },
+    {
+      "code": 6020,
+      "name": "InvalidDelegationState",
+      "msg": "Invalid delegation state; call prepare_delegation first"
+    },
+    {
+      "code": 6021,
+      "name": "InvalidExecutionRegion",
+      "msg": "Invalid execution region"
+    },
+    {
+      "code": 6022,
+      "name": "DelegationRequiresCheckpoint",
+      "msg": "Delegation requires final checkpoint"
+    },
+    {
+      "code": 6023,
+      "name": "RateLimitExceeded",
+      "msg": "Rate limit exceeded"
+    },
+    {
+      "code": 6024,
+      "name": "BurstLimitExceeded",
+      "msg": "Burst limit exceeded"
+    },
+    {
+      "code": 6025,
+      "name": "InvalidWindow",
+      "msg": "Invalid usage window"
+    },
+    {
+      "code": 6026,
+      "name": "WindowNotFinished",
+      "msg": "Window not finished"
+    },
+    {
+      "code": 6027,
+      "name": "InvalidCheckpointSequence",
+      "msg": "Checkpoint sequence invalid"
+    },
+    {
+      "code": 6028,
+      "name": "CheckpointRegression",
+      "msg": "Checkpoint regression detected"
+    },
+    {
+      "code": 6029,
+      "name": "ManualBlockActive",
+      "msg": "Manual block prevents change"
+    },
+    {
+      "code": 6030,
+      "name": "EnforcementDataMissing",
+      "msg": "Enforcement skipped due to missing data"
+    },
+    {
+      "code": 6031,
+      "name": "InvalidSeverity",
+      "msg": "Invalid abuse severity"
+    },
+    {
+      "code": 6032,
+      "name": "DuplicateAbuseSignal",
+      "msg": "Duplicate abuse signal"
+    },
+    {
+      "code": 6033,
+      "name": "ReputationTooLow",
+      "msg": "Reputation too low"
+    },
+    {
+      "code": 6034,
+      "name": "ReputationOverflow",
+      "msg": "Reputation overflow"
+    }
+  ],
+  "types": [
+    {
+      "name": "AbuseSignal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "reporter_service",
+            "type": "pubkey"
+          },
+          {
+            "name": "subject",
+            "type": "pubkey"
+          },
+          {
+            "name": "severity",
+            "type": "u8"
+          },
+          {
+            "name": "category",
+            "type": "u32"
+          },
+          {
+            "name": "created_ts",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AbuseSignalEmitted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "abuse_signal",
+            "type": "pubkey"
+          },
+          {
+            "name": "reporter_service",
+            "type": "pubkey"
+          },
+          {
+            "name": "subject",
+            "type": "pubkey"
+          },
+          {
+            "name": "severity",
+            "type": "u8"
+          },
+          {
+            "name": "category",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ApiKeyAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "reputation",
+            "type": "pubkey"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "ApiKeyStatus"
+              }
+            }
+          },
+          {
+            "name": "lifetime_usage",
+            "type": "u128"
+          },
+          {
+            "name": "last_checkpoint_ts",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ApiKeyCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "policy",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ApiKeyRevoked",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ApiKeyStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Throttled"
+          },
+          {
+            "name": "Blocked"
+          },
+          {
+            "name": "Revoked"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ApiKeyStatusChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_status",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DelegatedUsageAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "execution_region",
+            "type": "pubkey"
+          },
+          {
+            "name": "delegated",
+            "type": "bool"
+          },
+          {
+            "name": "delegation_seq",
+            "type": "u64"
+          },
+          {
+            "name": "window_start_ts",
+            "type": "i64"
+          },
+          {
+            "name": "current_window_usage",
+            "type": "u64"
+          },
+          {
+            "name": "burst_counter",
+            "type": "u64"
+          },
+          {
+            "name": "last_update_ts",
+            "type": "i64"
+          },
+          {
+            "name": "delegated_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnforcementEvaluated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_status",
+            "type": "u8"
+          },
+          {
+            "name": "usage",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KeyManuallyBlocked",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KeyManuallyUnblocked",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PolicyAttachedToKey",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PolicyCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "requests_per_window",
+            "type": "u64"
+          },
+          {
+            "name": "window_seconds",
+            "type": "u64"
+          },
+          {
+            "name": "burst_limit",
+            "type": "u64"
+          },
+          {
+            "name": "cost_per_request",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PolicyUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "requests_per_window",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "window_seconds",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "burst_limit",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "cost_per_request",
+            "type": {
+              "option": "u64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProtocolInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "pubkey"
+          },
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "protocol_fee_bps",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProtocolState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin_authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "protocol_fee_bps",
+            "type": "u16"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "service_count",
+            "type": "u64"
+          },
+          {
+            "name": "api_key_count",
+            "type": "u64"
+          },
+          {
+            "name": "total_usage_checkpoints",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProtocolUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "protocol",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_fee_bps",
+            "type": {
+              "option": "u16"
+            }
+          },
+          {
+            "name": "new_treasury",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "paused",
+            "type": {
+              "option": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "RateLimitPolicy",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "requests_per_window",
+            "type": "u64"
+          },
+          {
+            "name": "window_seconds",
+            "type": "u64"
+          },
+          {
+            "name": "burst_limit",
+            "type": "u64"
+          },
+          {
+            "name": "cost_per_request",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReputationAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "subject",
+            "type": "pubkey"
+          },
+          {
+            "name": "global_score",
+            "type": "i64"
+          },
+          {
+            "name": "signal_count",
+            "type": "u64"
+          },
+          {
+            "name": "last_updated_ts",
+            "type": "i64"
+          },
+          {
+            "name": "flags",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReputationUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "reputation",
+            "type": "pubkey"
+          },
+          {
+            "name": "subject",
+            "type": "pubkey"
+          },
+          {
+            "name": "delta",
+            "type": "i64"
+          },
+          {
+            "name": "new_score",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ServiceAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "ServiceStatus"
+              }
+            }
+          },
+          {
+            "name": "default_policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_usage_units",
+            "type": "u128"
+          },
+          {
+            "name": "created_ts",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ServiceCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "protocol",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "default_policy",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ServiceStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Paused"
+          },
+          {
+            "name": "Disabled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ServiceStatusChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_status",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ServiceUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_authority",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "new_default_policy",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsageCheckpointSubmitted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegated_usage",
+            "type": "pubkey"
+          },
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "service",
+            "type": "pubkey"
+          },
+          {
+            "name": "window_usage",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsageDelegated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegated_usage",
+            "type": "pubkey"
+          },
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "policy",
+            "type": "pubkey"
+          },
+          {
+            "name": "execution_region",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsageRecordedRealtime",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegated_usage",
+            "type": "pubkey"
+          },
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "window_usage",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsageUndelegated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "delegated_usage",
+            "type": "pubkey"
+          },
+          {
+            "name": "api_key",
+            "type": "pubkey"
+          }
+        ]
+      }
+    }
+  ],
+  "constants": [
+    {
+      "name": "ABUSE_SIGNAL_SEED",
+      "type": "string",
+      "value": "\"abuse_signal\""
+    },
+    {
+      "name": "API_KEY_SEED",
+      "type": "string",
+      "value": "\"api_key\""
+    },
+    {
+      "name": "DEFAULT_REPUTATION_SCORE",
+      "docs": [
+        "DEFAULTS"
+      ],
+      "type": "i64",
+      "value": "0"
+    },
+    {
+      "name": "DEFAULT_WINDOW_SECONDS",
+      "type": "u64",
+      "value": "60"
+    },
+    {
+      "name": "DELEGATED_USAGE_SEED",
+      "type": "string",
+      "value": "\"delegated_usage\""
+    },
+    {
+      "name": "FLAG_BOT",
+      "type": "u32",
+      "value": "2"
+    },
+    {
+      "name": "FLAG_MANUAL_BLOCK",
+      "type": "u32",
+      "value": "8"
+    },
+    {
+      "name": "FLAG_SPAM",
+      "docs": [
+        "ABUSE FLAG BITS"
+      ],
+      "type": "u32",
+      "value": "1"
+    },
+    {
+      "name": "FLAG_SUSPICIOUS_BURST",
+      "type": "u32",
+      "value": "4"
+    },
+    {
+      "name": "MAX_BPS",
+      "type": "u16",
+      "value": "10000"
+    },
+    {
+      "name": "MAX_FLAGS",
+      "type": "u32",
+      "value": "4294967295"
+    },
+    {
+      "name": "MAX_NAME_LEN",
+      "docs": [
+        "GENERAL LIMITS"
+      ],
+      "type": "u32",
+      "value": "64"
+    },
+    {
+      "name": "MAX_SEVERITY",
+      "type": "u8",
+      "value": "10"
+    },
+    {
+      "name": "MIN_WINDOW_SECONDS",
+      "type": "u64",
+      "value": "1"
+    },
+    {
+      "name": "POLICY_SEED",
+      "type": "string",
+      "value": "\"policy\""
+    },
+    {
+      "name": "PROTOCOL_SEED",
+      "docs": [
+        "PDA SEEDS"
+      ],
+      "type": "string",
+      "value": "\"protocol\""
+    },
+    {
+      "name": "REPUTATION_MAX",
+      "type": "i64",
+      "value": "1000000"
+    },
+    {
+      "name": "REPUTATION_MIN",
+      "docs": [
+        "Reputation bounds (prevent runaway math)"
+      ],
+      "type": "i64",
+      "value": "-1000000"
+    },
+    {
+      "name": "REPUTATION_SEED",
+      "type": "string",
+      "value": "\"reputation\""
+    },
+    {
+      "name": "SERVICE_SEED",
+      "type": "string",
+      "value": "\"service\""
+    },
+    {
+      "name": "USAGE_SEED",
+      "type": "string",
+      "value": "\"usage\""
+    }
+  ]
+}

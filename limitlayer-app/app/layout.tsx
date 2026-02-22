@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/siteConfig";
 import { QueryProvider } from "@/providers/QueryProvider";
+import { LimitLayerProvider } from "@/providers/LimitLayerProvider";
 import { SolanaProvider } from "@/providers/SolanaProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -35,7 +36,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <SolanaProvider>
-          <QueryProvider>{children}</QueryProvider>
+          <LimitLayerProvider>
+            <QueryProvider>{children}</QueryProvider>
+          </LimitLayerProvider>
         </SolanaProvider>
         <Toaster />
       </body>

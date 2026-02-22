@@ -150,7 +150,7 @@ export function CustomWalletModal() {
       )}
     >
       <div
-        className="absolute inset-0 bg-foreground/50"
+        className="absolute inset-0 bg-black/50"
         aria-hidden
         onClick={hide}
         onMouseDown={hide}

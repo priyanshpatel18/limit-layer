@@ -1,5 +1,6 @@
 "use client";
 
+import { Nav } from "@/components/Nav";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
 import Link from "next/link";
@@ -9,17 +10,11 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-background">
-      <header className="flex justify-center">
-        <Link
-          href="/"
-          className="text-xl font-semibold text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
-        >
-          Limit Layer
-        </Link>
-      </header>
+    <div className="min-h-screen flex flex-col bg-background">
+      <Nav />
 
-      <main className="max-w-md w-full flex flex-col items-center text-center mt-8">
+      <main className="flex-1 flex flex-col items-center justify-center p-6">
+        <div className="max-w-md w-full flex flex-col items-center text-center">
         <section className="space-y-2" aria-labelledby="not-found-title">
           <p className="text-6xl font-bold tabular-nums text-foreground" aria-hidden>
             404
@@ -52,6 +47,7 @@ export default function NotFound() {
             </Link>
           </Button>
         </nav>
+        </div>
       </main>
     </div>
   );
