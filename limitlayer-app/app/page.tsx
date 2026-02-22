@@ -105,7 +105,7 @@ export default function LandingPage() {
 
           <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
             <Badge className="mb-4 text-sm font-medium uppercase tracking-wide text-primary bg-primary/10 px-5">
-              Verifiable rate limiting on Solana
+              LIVE ON SOLANA DEVNET
             </Badge>
             <h1 className="text-3xl font-black tracking-tight text-foreground sm:text-5xl md:text-8xl">
               Limit. Verify.

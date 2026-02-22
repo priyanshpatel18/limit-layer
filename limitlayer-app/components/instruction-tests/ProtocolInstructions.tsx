@@ -3,13 +3,17 @@
 import * as anchor from "@coral-xyz/anchor";
 import { useCallback, useState } from "react";
 import { PublicKey } from "@solana/web3.js";
+import { useWallet } from "@solana/wallet-adapter-react";
 import { toast } from "sonner";
 import { useLimitLayer } from "@/providers/LimitLayerProvider";
+import { useProtocol } from "@/hooks/useProtocol";
 import { protocolPda, PROGRAM_ID } from "@/lib/limitlayer/pda";
 import { InstructionCard, TxButton } from "./InstructionCard";
 
 export function ProtocolInstructions() {
   const { program, isReady } = useLimitLayer();
+  const { publicKey } = useWallet();
+  const { data: protocol } = useProtocol();
   const [loading, setLoading] = useState<string | null>(null);
   const [protocolFeeBps, setProtocolFeeBps] = useState("250");
   const [treasury, setTreasury] = useState("");
@@ -68,6 +72,9 @@ export function ProtocolInstructions() {
       .rpc();
   }, [program, newFeeBps, newTreasury, paused]);
 
+  const isProtocolAdmin = protocol && publicKey && protocol.adminAuthority.equals(publicKey);
+  const canUpdateProtocol = !!isProtocolAdmin;
+
   if (!isReady) return null;
 
   return (
@@ -77,21 +84,27 @@ export function ProtocolInstructions() {
     >
       <div className="space-y-2">
         <label className="text-sm font-medium">Initialize Protocol</label>
-        <div className="flex flex-wrap gap-2">
-          <input
-            type="number"
-            placeholder="Fee BPS (e.g. 250)"
-            value={protocolFeeBps}
-            onChange={(e) => setProtocolFeeBps(e.target.value)}
-            className="h-9 rounded-md border border-input bg-background px-3 text-sm"
-          />
-          <input
-            type="text"
-            placeholder="Treasury (optional)"
-            value={treasury}
-            onChange={(e) => setTreasury(e.target.value)}
-            className="h-9 min-w-[200px] rounded-md border border-input bg-background px-3 text-sm"
-          />
+        <div className="flex flex-wrap gap-2 items-end">
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-muted-foreground">Fee (basis points)</label>
+            <input
+              type="number"
+              placeholder="250"
+              value={protocolFeeBps}
+              onChange={(e) => setProtocolFeeBps(e.target.value)}
+              className="h-9 rounded-md border border-input bg-background px-3 text-sm"
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-muted-foreground">Treasury (optional)</label>
+            <input
+              type="text"
+              placeholder="Treasury pubkey"
+              value={treasury}
+              onChange={(e) => setTreasury(e.target.value)}
+              className="h-9 min-w-[200px] rounded-md border border-input bg-background px-3 text-sm"
+            />
+          </div>
           <TxButton
             label="Initialize"
             loading={loading === "init"}
@@ -102,21 +115,27 @@ export function ProtocolInstructions() {
 
       <div className="space-y-2">
         <label className="text-sm font-medium">Update Protocol</label>
-        <div className="flex flex-wrap gap-2 items-center">
-          <input
-            type="number"
-            placeholder="New fee BPS"
-            value={newFeeBps}
-            onChange={(e) => setNewFeeBps(e.target.value)}
-            className="h-9 w-24 rounded-md border border-input bg-background px-3 text-sm"
-          />
-          <input
-            type="text"
-            placeholder="New treasury"
-            value={newTreasury}
-            onChange={(e) => setNewTreasury(e.target.value)}
-            className="h-9 min-w-[180px] rounded-md border border-input bg-background px-3 text-sm"
-          />
+        <div className="flex flex-wrap gap-2 items-end">
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-muted-foreground">Fee (basis points)</label>
+            <input
+              type="number"
+              placeholder="500"
+              value={newFeeBps}
+              onChange={(e) => setNewFeeBps(e.target.value)}
+              className="h-9 w-24 rounded-md border border-input bg-background px-3 text-sm"
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-xs font-medium text-muted-foreground">Treasury</label>
+            <input
+              type="text"
+              placeholder="Treasury pubkey"
+              value={newTreasury}
+              onChange={(e) => setNewTreasury(e.target.value)}
+              className="h-9 min-w-[180px] rounded-md border border-input bg-background px-3 text-sm"
+            />
+          </div>
           <label className="flex items-center gap-1.5 text-sm">
             <input
               type="checkbox"
@@ -129,8 +148,14 @@ export function ProtocolInstructions() {
             label="Update"
             loading={loading === "update"}
             onClick={() => run("update", updateProtocol)}
+            disabled={!canUpdateProtocol}
           />
         </div>
+        {protocol && publicKey && !canUpdateProtocol && (
+          <p className="text-xs text-muted-foreground">
+            Only the protocol admin can update. Connect the admin wallet.
+          </p>
+        )}
       </div>
     </InstructionCard>
   );

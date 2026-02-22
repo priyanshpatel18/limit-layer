@@ -19,8 +19,7 @@ export function servicePda(
   programId: PublicKey,
   serviceCount: number
 ): [PublicKey, number] {
-  const buf = Buffer.alloc(8);
-  buf.writeBigUInt64LE(BigInt(serviceCount));
+  const buf = new BN(serviceCount).toArrayLike(Buffer, "le", 8);
   const [pda] = PublicKey.findProgramAddressSync(
     [Buffer.from("service"), buf],
     programId
@@ -79,8 +78,7 @@ export function abuseSignalPda(
   subject: PublicKey,
   unixTimestamp: number
 ): PublicKey {
-  const buf = Buffer.alloc(8);
-  buf.writeBigInt64LE(BigInt(unixTimestamp));
+  const buf = new BN(unixTimestamp).toArrayLike(Buffer, "le", 8);
   const [pda] = PublicKey.findProgramAddressSync(
     [Buffer.from("abuse_signal"), subject.toBuffer(), buf],
     programId
